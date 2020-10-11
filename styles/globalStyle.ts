@@ -56,16 +56,16 @@ const GlobalStyle = createGlobalStyle`
 
   ::selection {
     background-color: #2980b9;
-    color: #fff;
+    color: ${({ theme }: any) => theme.colors.primary_white};
   }
 
   body {
     font-family: "OpenSans", "Segoe UI", Arial, sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: #4a4d52;
+    color: ${({ theme }: any) => theme.colors.primary_gray};
+    background-color: ${({ theme }: any) => theme.colors.secondary_white};
 
-    background-color: #2980b9;
     min-height: 200vh;
   }
 `

@@ -27,7 +27,7 @@ const showNavbarBackground = css`
   width: 100% !important;
   height: 8vh !important;
   background-color: rgba(41, 128, 185, 0.95) !important;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: ${(({ theme }) => theme.shadow.white)};
 
   ul {
     top: 8vh !important;
@@ -48,7 +48,7 @@ export const NavbarLogo = styled.div`
     transition: 0.3s;
 
     :hover {
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      box-shadow: ${(({ theme }) => theme.shadow.black)};
       transform: rotate(3deg) scale(1.1);
     }
   }

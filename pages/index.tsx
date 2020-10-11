@@ -1,6 +1,10 @@
-const Home = () => {
+import { FC } from 'react'
+
+import HeaderMain from '../layout/HeaderMain/HeaderMainComponent'
+
+const Home: FC = () => {
   return (
-    <h3>Home</h3>
+    <HeaderMain />
   )
 }
 

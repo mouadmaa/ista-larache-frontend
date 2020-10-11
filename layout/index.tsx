@@ -4,17 +4,14 @@ import Head from 'next/head'
 import GlobalStyle from '../styles/globalStyle'
 import Navbar from './Navbar/NavbarComponent'
 
-interface LayoutProps {
-  title?: string
-  isMain?: boolean
-}
+interface LayoutProps { }
 
 const Layout: FC<LayoutProps> = props => {
-  const { children, title = 'ISTA LARACHE - OFPPT', isMain = false } = props
+  const { children } = props
 
   return (
     <Fragment>
-      {HtmlHead(title)}
+      {HtmlHead}
       <GlobalStyle />
       <Navbar />
       {children}
@@ -24,7 +21,7 @@ const Layout: FC<LayoutProps> = props => {
 
 export default Layout
 
-const HtmlHead = (title: string) => (
+const HtmlHead = (
   <Head>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +30,6 @@ const HtmlHead = (title: string) => (
     <meta name="description" content="Institut Specialise De Technologie Appliquee Larache - OFPPT Larache" />
     <meta name="keywords" content="ista ofppt larache" />
 
-    <title>{title}</title>
+    <title>ISTA LARACHE - OFPPT</title>
   </Head>
 )
