@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from 'react'
+import { FC, Fragment } from 'react'
 import Head from 'next/head'
 
 import GlobalStyle from '../styles/globalStyle'

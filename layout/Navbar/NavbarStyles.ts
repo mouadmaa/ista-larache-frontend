@@ -85,7 +85,7 @@ export const NavbarList = styled.ul`
     justify-content: space-around;
     padding: 10% 0 30%;
     transform: translateX(200%);
-    transition: all 0.8s ease-in;
+    transition: all 0.5s ease-in;
   }
 `
 

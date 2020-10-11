@@ -39,7 +39,7 @@ export const HeaderMainTextContainer = styled.div`
 
 export const HeaderMainSectionService = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 520px));
+  grid-template-columns: repeat(2, minmax(200px, 720px));
   justify-content: space-evenly;
   grid-gap: 4rem 6rem;
   padding: 0 5vw;
@@ -109,6 +109,7 @@ export const HeaderMainServerBoxContainer = styled.div`
 
     p {
       font-size: 1.25rem;
+      text-align: justify;
     }
 
     @media screen and (max-width: 62.5em) {
