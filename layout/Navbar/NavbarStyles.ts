@@ -26,7 +26,7 @@ export const NavbarContainer = styled.nav`
 const showNavbarBackground = css`
   width: 100% !important;
   height: 8vh !important;
-  background: rgba(41, 128, 185, 0.95) !important;
+  background-color: rgba(41, 128, 185, 0.95) !important;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
 
   ul {
@@ -39,10 +39,10 @@ export const NavbarLogo = styled.div`
   align-items: center;
 
   a {
+    color: ${({ theme }) => theme.colors.primary_white};
     font-family: 'OpenSans Bold';
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
-    color: #f2f8f8;
     text-decoration: none;
     padding: 0 0.5rem;
     transition: 0.3s;
@@ -74,7 +74,7 @@ export const NavbarList = styled.ul`
   @media screen and (max-width: 50em) {
     width: 75%;
     height: 92vh;
-    background: rgba(41, 128, 185, 0.9);
+    background-color: rgba(41, 128, 185, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,10 +113,10 @@ const navbarItemActive = css`
 `
 
 export const NavbarLink = styled.a`
+  color: ${({ theme }) => theme.colors.primary_white};
   position: relative;
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  color: #f2f8f8;
   font-family: 'OpenSans Bold';
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
@@ -133,7 +133,7 @@ export const NavbarLink = styled.a`
     bottom: 0;
     width: 0;
     height: 0.16rem;
-    background: #f2f8f8;
+    background-color: ${({ theme }) => theme.colors.primary_white};
     transition: 0.3s;
   }
 
@@ -170,7 +170,7 @@ export const NavbarBurger = styled.div`
   div {
     width: 20px;
     height: 2px;
-    background: #f2f8f8;
+    background-color: ${({ theme }) => theme.colors.primary_white};
     margin: 3px;
     transition: all 0.4s ease;
   }
