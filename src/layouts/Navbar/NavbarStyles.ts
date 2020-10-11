@@ -39,8 +39,8 @@ export const NavbarLogo = styled.div`
   align-items: center;
 
   a {
+    font-family: 'OpenSans Bold';
     font-size: 1.8rem;
-    font-weight: 700;
     letter-spacing: 0.2rem;
     color: #f2f8f8;
     text-decoration: none;
@@ -117,8 +117,8 @@ export const NavbarLink = styled.a`
   display: inline-block;
   padding: 0.2rem 0.6rem;
   color: #f2f8f8;
+  font-family: 'OpenSans Bold';
   font-size: 1.2rem;
-  font-weight: 500;
   letter-spacing: 0.1rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -132,7 +132,7 @@ export const NavbarLink = styled.a`
     right: 0;
     bottom: 0;
     width: 0;
-    height: 0.2rem;
+    height: 0.16rem;
     background: #f2f8f8;
     transition: 0.3s;
   }

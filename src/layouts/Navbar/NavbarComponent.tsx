@@ -13,8 +13,6 @@ const Navbar: FC = () => {
 
   const { asPath } = useRouter()
 
-  console.log(asPath, asPath.includes('/services'))
-
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 30) setShowNavbarBackground(true)
