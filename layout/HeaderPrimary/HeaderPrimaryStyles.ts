@@ -79,7 +79,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
   border-radius: 1rem;
   box-shadow: ${(({ theme }) => theme.shadow.white)};
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 
   @media screen and (max-width: 62.5em) {
     grid-template-columns: 1fr;
@@ -91,7 +91,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
   }
 
   :hover {
-    transform: translateY(-0.5rem) scale(1.02);
+    transform: translateY(-0.4rem) scale(1.02);
     box-shadow: ${(({ theme }) => theme.shadow.black)};
   }
 

@@ -466,9 +466,33 @@ export type ActivityUpdateInput = {
   creator?: Maybe<Scalars['String']>;
 };
 
+export type ActivityFragment = (
+  { __typename?: 'Activity' }
+  & Pick<Activity, 'id' | 'image' | 'title' | 'desc' | 'date' | 'creator' | 'slug'>
+);
+
 export type FormationFragment = (
   { __typename?: 'Formation' }
   & Pick<Formation, 'id' | 'name' | 'descUrl' | 'level'>
+);
+
+export type ActivitiesQueryVariables = Exact<{
+  take?: Maybe<Scalars['Int']>;
+  skip?: Maybe<Scalars['Int']>;
+  orderBy?: Maybe<ActivityOrderByInput>;
+}>;
+
+
+export type ActivitiesQuery = (
+  { __typename?: 'Query' }
+  & { activities?: Maybe<(
+    { __typename?: 'Activities' }
+    & Pick<Activities, 'count'>
+    & { activities: Array<(
+      { __typename?: 'Activity' }
+      & ActivityFragment
+    )> }
+  )> }
 );
 
 export type FormationsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -482,6 +506,17 @@ export type FormationsQuery = (
   )> }
 );
 
+export const ActivityFragmentDoc = gql`
+    fragment Activity on Activity {
+  id
+  image
+  title
+  desc
+  date
+  creator
+  slug
+}
+    `;
 export const FormationFragmentDoc = gql`
     fragment Formation on Formation {
   id
@@ -490,6 +525,44 @@ export const FormationFragmentDoc = gql`
   level
 }
     `;
+export const ActivitiesDocument = gql`
+    query Activities($take: Int, $skip: Int, $orderBy: ActivityOrderByInput) {
+  activities(take: $take, skip: $skip, orderBy: $orderBy) {
+    count
+    activities {
+      ...Activity
+    }
+  }
+}
+    ${ActivityFragmentDoc}`;
+
+/**
+ * __useActivitiesQuery__
+ *
+ * To run a query within a React component, call `useActivitiesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useActivitiesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useActivitiesQuery({
+ *   variables: {
+ *      take: // value for 'take'
+ *      skip: // value for 'skip'
+ *      orderBy: // value for 'orderBy'
+ *   },
+ * });
+ */
+export function useActivitiesQuery(baseOptions?: Apollo.QueryHookOptions<ActivitiesQuery, ActivitiesQueryVariables>) {
+        return Apollo.useQuery<ActivitiesQuery, ActivitiesQueryVariables>(ActivitiesDocument, baseOptions);
+      }
+export function useActivitiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ActivitiesQuery, ActivitiesQueryVariables>) {
+          return Apollo.useLazyQuery<ActivitiesQuery, ActivitiesQueryVariables>(ActivitiesDocument, baseOptions);
+        }
+export type ActivitiesQueryHookResult = ReturnType<typeof useActivitiesQuery>;
+export type ActivitiesLazyQueryHookResult = ReturnType<typeof useActivitiesLazyQuery>;
+export type ActivitiesQueryResult = Apollo.QueryResult<ActivitiesQuery, ActivitiesQueryVariables>;
 export const FormationsDocument = gql`
     query Formations {
   formations {

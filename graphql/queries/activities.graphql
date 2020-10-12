@@ -1,0 +1,16 @@
+query Activities(
+  $take: Int
+  $skip: Int
+  $orderBy: ActivityOrderByInput
+) {
+  activities(
+    take: $take
+    skip: $skip
+    orderBy: $orderBy
+  ) {
+    count
+    activities {
+      ...Activity
+    }
+  }
+}

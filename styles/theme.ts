@@ -7,6 +7,7 @@ const theme = {
     primaryWhite: '#f2f8f8',
     secondaryWhite: '#f3feff',
     primaryGray: '#4a4d52',
+    secondaryGray: '#2c313a',
   },
   shadow: {
     white: '0 1rem 2rem rgba(0, 0, 0, 0.1)',
