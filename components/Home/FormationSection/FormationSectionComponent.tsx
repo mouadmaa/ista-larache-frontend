@@ -3,8 +3,11 @@ import { FC } from 'react'
 import { FormationSectionContainer, FormationSectionContent } from './FormationSectionStyles'
 import HeadingSecondary from '../../UI/Heading/HeadingScondary/HeadingScondaryComponent'
 import ImagesSection from '../ImagesSetion/ImagesSetionComponent'
+import { useFormationsQuery } from '../../../generated/graphql'
 
 const FormationSection: FC = () => {
+  const { data } = useFormationsQuery()
+
   return (
     <FormationSectionContainer>
       <HeadingSecondary text="Les Formations assurées à l' ista larache" />
@@ -16,7 +19,7 @@ const FormationSection: FC = () => {
       />
 
       <FormationSectionContent>
-        Formations...
+        {JSON.stringify(data?.formations, null, 2)}
       </FormationSectionContent>
     </FormationSectionContainer>
   )
