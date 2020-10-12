@@ -39,8 +39,9 @@ export const NavbarLogo = styled.div`
   align-items: center;
 
   a {
-    color: ${({ theme }) => theme.colors.primary_white};
-    font-family: 'OpenSans Bold';
+    color: ${({ theme }) => theme.color.primaryWhite};
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 700;
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
     text-decoration: none;
@@ -113,11 +114,12 @@ const navbarItemActive = css`
 `
 
 export const NavbarLink = styled.a`
-  color: ${({ theme }) => theme.colors.primary_white};
+  color: ${({ theme }) => theme.color.primaryWhite};
   position: relative;
   display: inline-block;
   padding: 0.2rem 0.6rem;
-  font-family: 'OpenSans Bold';
+  font-family: ${({ theme }) => theme.fontFamily};
+  font-weight: 700;
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -133,7 +135,7 @@ export const NavbarLink = styled.a`
     bottom: 0;
     width: 0;
     height: 0.16rem;
-    background-color: ${({ theme }) => theme.colors.primary_white};
+    background-color: ${({ theme }) => theme.color.primaryWhite};
     transition: 0.3s;
   }
 
@@ -170,7 +172,7 @@ export const NavbarBurger = styled.div`
   div {
     width: 20px;
     height: 2px;
-    background-color: ${({ theme }) => theme.colors.primary_white};
+    background-color: ${({ theme }) => theme.color.primaryWhite};
     margin: 3px;
     transition: all 0.4s ease;
   }

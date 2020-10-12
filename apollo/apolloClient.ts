@@ -6,7 +6,7 @@ let apolloClient
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
-    uri: process.env.NEXT_PUBLIC_GRAPHQL_URL,
+    uri: process.env.NEXT_PUBLIC_BACKEND_URL,
     cache: new InMemoryCache(),
   })
 }

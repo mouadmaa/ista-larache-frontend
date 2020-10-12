@@ -8,7 +8,8 @@ export const AboutSectionContainer = styled.section`
   padding: 10rem 5vw;
 
   p {
-    font-family: 'OpenSans Bold';
+    font-family: "Open Sans";
+    font-weight: 600;
     font-size: 1.4rem;
     text-align: center;
     max-width: 80vw;

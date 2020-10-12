@@ -30,7 +30,8 @@ export const HeaderPrimaryTextContainer = styled.div`
     }
 
     h1 > span:last-of-type {
-      font-family: 'OpenSans Regular';
+      font-family: ${({ theme }) => theme.fontFamily};
+      font-weight: 600;
       font-size: 1.8rem;
       margin: 0 4rem;
     }
@@ -73,7 +74,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
   justify-items: center;
   grid-column: 1.2rem;
   grid-gap: 2rem;
-  background-color: ${({ theme }) => theme.colors.secondary_white};
+  background-color: ${({ theme }) => theme.color.secondaryWhite};
   padding: 1rem 3rem;
   border-radius: 1rem;
   box-shadow: ${(({ theme }) => theme.shadow.white)};

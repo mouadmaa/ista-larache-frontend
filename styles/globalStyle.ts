@@ -9,21 +9,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
 
-  @font-face {
-    font-family: 'OpenSans';
-    src: url('/fonts/OpenSans-Light.ttf');
-  }
-
-  @font-face {
-    font-family: 'OpenSans Regular';
-    src: url('/fonts/OpenSans-Regular.ttf');
-  }
-
-  @font-face {
-    font-family: 'OpenSans Bold';
-    src: url('/fonts/OpenSans-SemiBold.ttf');
-  }
-
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
@@ -55,15 +40,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }: any) => theme.colors.primary_white};
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }: any) => theme.color.primaryWhite};
   }
 
   body {
-    font-family: "OpenSans", "Segoe UI", Arial, sans-serif;
+    color: ${({ theme }) => theme.color.primary_gray};
+    background-color: ${({ theme }) => theme.color.secondaryWhite};
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 400;
     line-height: 1.7;
-    color: ${({ theme }: any) => theme.colors.primary_gray};
-    background-color: ${({ theme }: any) => theme.colors.secondary_white};
 
     min-height: 300vh;
   }

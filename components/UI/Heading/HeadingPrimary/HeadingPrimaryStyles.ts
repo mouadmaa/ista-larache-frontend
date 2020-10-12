@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeadingPrimaryContainer = styled.h1`
-  color: ${({ theme }) => theme.colors.primary_white};
+  color: ${({ theme }) => theme.color.primaryWhite};
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -12,8 +12,9 @@ export const HeadingPrimaryContainer = styled.h1`
 
   span:first-of-type {
     display: block;
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 700;
     font-size: 4rem;
-    font-family: 'OpenSans Bold';
     margin-bottom: 1rem;
     letter-spacing: 1rem;
     line-height: 7rem;
@@ -26,7 +27,8 @@ export const HeadingPrimaryContainer = styled.h1`
   span:last-of-type {
     display: block;
     font-size: 1.6rem;
-    font-family: 'OpenSans Regular';
+    font-family: ${({ theme }) => theme.fontFamily};
+    font-weight: 600;
     letter-spacing: 0.2rem;
   }
 `

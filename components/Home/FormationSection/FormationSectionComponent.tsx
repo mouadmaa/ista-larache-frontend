@@ -19,7 +19,7 @@ const FormationSection: FC = () => {
       />
 
       <FormationSectionContent>
-        {JSON.stringify(data?.formations, null, 2)}
+        {JSON.stringify(data.formations, null, 4)}
       </FormationSectionContent>
     </FormationSectionContainer>
   )
