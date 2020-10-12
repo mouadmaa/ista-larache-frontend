@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
 import { AboutSectionContainer } from './AboutSectionStyles'
-import HeaderSecondary from '../../UI/Header/HeaderSecondary/HeaderSecondaryComponent'
+import HeadingSecondary from '../../UI/Heading/HeadingScondary/HeadingScondaryComponent'
 import ButtonLink from '../../UI/Button/ButtonLink/ButtonLinkComponent'
 import ImagesSetion from '../ImagesSetion/ImagesSetionComponent'
 
 const AboutSection: FC = () => (
   <AboutSectionContainer>
-    <HeaderSecondary text='À Propos De ISTA Larache' />
+    <HeadingSecondary text='À Propos De ISTA Larache' />
 
     <ImagesSetion
       img1='images/ista-1.png'

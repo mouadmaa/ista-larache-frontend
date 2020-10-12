@@ -1,12 +1,12 @@
 import { FC } from 'react'
-import { HeadingPrimaryContainer } from './HeaderPrimaryStyles'
+import { HeadingPrimaryContainer } from './HeadingPrimaryStyles'
 
 interface HeaderPrimaryProps {
   textMain: string
   textSub: string
 }
 
-const HeaderPrimary: FC<HeaderPrimaryProps> = props => {
+const HeadingPrimary: FC<HeaderPrimaryProps> = props => {
   const { textMain, textSub } = props
 
   return (
@@ -17,4 +17,4 @@ const HeaderPrimary: FC<HeaderPrimaryProps> = props => {
   )
 }
 
-export default HeaderPrimary
+export default HeadingPrimary

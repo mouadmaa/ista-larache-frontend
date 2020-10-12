@@ -1,19 +1,11 @@
 import styled from 'styled-components'
 
-export const AboutSectionContainer = styled.section`
+export const FormationSectionContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10rem 5vw;
-
-  p {
-    font-family: 'OpenSans Bold';
-    font-size: 1.4rem;
-    text-align: center;
-    max-width: 80vw;
-    margin: 5rem 0 2rem;
-  }
+  padding: 0 5vw 10rem;
 
   section {
     margin-top: 1rem;
@@ -33,8 +25,18 @@ export const AboutSectionContainer = styled.section`
     }
 
     @media only screen and (max-width: 37.5em) {
-      height: 10rem;
+      min-height: 10rem;
       max-width: 80vw;
     }
   }
+`
+
+export const FormationSectionContent = styled.div`
+  display: grid;
+  grid-template-columns: minmax(200px, 520px);
+  justify-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 `

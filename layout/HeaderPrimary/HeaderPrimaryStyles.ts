@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
-export const HeaderMainContainer = styled.header`
+export const HeaderPrimaryContainer = styled.header`
   width: 100%;
   height: 95vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(images/ista-2.png);
+  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(images/ista-3.png);
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);
 
   @media screen and (max-width: 75em) {
@@ -17,7 +17,7 @@ export const HeaderMainContainer = styled.header`
   }
 `
 
-export const HeaderMainTextContainer = styled.div`
+export const HeaderPrimaryTextContainer = styled.div`
   text-align: center;
 
   h1 {
@@ -37,9 +37,9 @@ export const HeaderMainTextContainer = styled.div`
   }
 `
 
-export const HeaderMainSectionService = styled.section`
+export const HeaderPrimarySectionService = styled.section`
   display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 720px));
+  grid-template-columns: repeat(2, minmax(200px, 620px));
   justify-content: space-evenly;
   grid-gap: 4rem 6rem;
   padding: 0 5vw;
@@ -66,7 +66,7 @@ export const HeaderMainSectionService = styled.section`
   }
 `
 
-export const HeaderMainServerBoxContainer = styled.div`
+export const HeaderPrimaryServerBoxContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
@@ -114,6 +114,10 @@ export const HeaderMainServerBoxContainer = styled.div`
 
     @media screen and (max-width: 62.5em) {
       text-align: center;
+    }
+
+    @media screen and (max-width: 37.5em) {
+      text-align: left;
     }
   }
 `

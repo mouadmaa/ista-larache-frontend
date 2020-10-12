@@ -55,18 +55,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: #2980b9;
+    background-color: ${({ theme }) => theme.colors.primary};
     color: ${({ theme }: any) => theme.colors.primary_white};
   }
 
   body {
     font-family: "OpenSans", "Segoe UI", Arial, sans-serif;
-    font-weight: 400;
     line-height: 1.7;
     color: ${({ theme }: any) => theme.colors.primary_gray};
     background-color: ${({ theme }: any) => theme.colors.secondary_white};
 
-    min-height: 200vh;
+    min-height: 300vh;
   }
 `
 export default GlobalStyle

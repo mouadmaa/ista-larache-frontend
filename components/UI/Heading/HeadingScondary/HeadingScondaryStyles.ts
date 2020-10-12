@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
-export const HeaderSecondaryContainer = styled.h2`
+export const HeadingSecondaryContainer = styled.h2`
   font-family: 'OpenSans Bold';
   font-size: 2.4rem;
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 3rem;
-  background-image: linear-gradient(to right, #2c8ac7, #2676ab);
+  background-image: linear-gradient(to right, ${({ theme }) => theme.colors.secondary}, ${({ theme }) => theme.colors.tertiary});
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
