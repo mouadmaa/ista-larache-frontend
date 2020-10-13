@@ -13,6 +13,10 @@ export const ContactSectionContent = styled.section`
   grid-template-columns: repeat(2, minmax(200px, 700px));
   justify-content: space-between;
   grid-gap: 6rem 3rem;
+
+  @media screen and (max-width: 75em) {
+    grid-template-columns: minmax(200px, 800px);
+  }
 `
 
 export const ContactSectionAdress = styled.div`
@@ -58,6 +62,7 @@ export const ContactSectionAdressContent = styled.div`
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 0;
   }
 `
 

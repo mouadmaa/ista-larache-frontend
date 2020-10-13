@@ -1,5 +1,6 @@
 import { FC, Fragment } from 'react'
 import Head from 'next/head'
+import 'antd/dist/antd.css'
 
 import GlobalStyle from '../styles/globalStyle'
 import Navbar from './Navbar/NavbarComponent'

@@ -71,6 +71,7 @@ export const NavbarList = styled.ul`
   justify-content: space-between;
   list-style: none;
   top: 10vh !important;
+  margin-bottom: 0;
 
   @media screen and (max-width: 50em) {
     width: 75%;
