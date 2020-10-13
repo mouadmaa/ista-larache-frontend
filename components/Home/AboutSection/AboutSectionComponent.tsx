@@ -7,7 +7,9 @@ import ImagesSetion from '../ImagesSetion/ImagesSetionComponent'
 
 const AboutSection: FC = () => (
   <AboutSectionContainer>
-    <HeadingSecondary text='À Propos De ISTA Larache' />
+    <HeadingSecondary
+      text='À Propos De ISTA Larache'
+    />
 
     <ImagesSetion
       img1='images/ista-1.png'

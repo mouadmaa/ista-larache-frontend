@@ -12,7 +12,7 @@ export const ActivitySectionContainer = styled.section`
   clip-path: polygon(0% 15%, 100% 0%, 100% 85%, 0% 100%);
 
   h2 {
-    margin-bottom: 2rem;
+    margin: 2rem 0 3rem;
 
     @media screen and (max-width: 37.5em) {
       margin-top: 5rem;

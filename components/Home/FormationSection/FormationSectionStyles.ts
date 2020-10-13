@@ -5,7 +5,7 @@ export const FormationSectionContainer = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0 5vw 10rem;
+  padding: 4rem 5vw 10rem;
 
   section {
     margin-top: 1rem;
@@ -29,14 +29,28 @@ export const FormationSectionContainer = styled.section`
       max-width: 80vw;
     }
   }
+
+  @media only screen and (max-width: 37.5em) {
+    padding-bottom: 5rem;
+  }
 `
 
 export const FormationSectionContent = styled.div`
   display: grid;
-  grid-template-columns: minmax(200px, 520px);
+  width: 80vw;
+  grid-template-columns: repeat(3, minmax(200px, 520px));
   justify-items: center;
   align-content: center;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-gap: 3rem;
+  margin: 2rem 0 5rem;
+
+  @media only screen and (max-width: 62.5em) {
+    grid-template-columns: repeat(2, minmax(200px, 520px));
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    grid-template-columns: minmax(200px, 520px);
+    width: 100%;
+  }
 `

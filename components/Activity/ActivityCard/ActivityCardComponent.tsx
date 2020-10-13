@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import router from 'next/router'
 import moment from 'moment'
+import ReactHtmlParser from 'react-html-parser'
 
 import { ActivityCardContainer, ActivityCardContent, ActivityCardImageContainer } from './ActivityCardStyles'
 import HeadingTertiary from '../../UI/Heading/HeadingTertiary/HeadingTertiaryComponent'
@@ -34,17 +35,15 @@ const ActivityCard: FC<ActivityCardProps> = props => {
       <ActivityCardContent>
         <div>
           <span>{moment(+activity.date).format('YYYY/MM/DD')}</span>
-          <span>Créateur: <strong>{activity.creator.toUpperCase()}</strong></span>
+          <span>Créateur: {activity.creator.toUpperCase()}</span>
         </div>
 
         <HeadingTertiary text={activity.title} />
 
-        {/* <div
-          dangerouslySetInnerHTML={{
-            __html: `${activity.desc.substr(0, maxLength)}
-                ${activity.desc.length >= maxLength ? '...' : ''}`
-          }}
-        /> */}
+        <div>
+          {ReactHtmlParser(`${activity.desc.substr(0, maxLength)}
+            ${activity.desc.length >= maxLength ? '...' : ''}`)}
+        </div>
       </ActivityCardContent>
     </ActivityCardContainer>
   )

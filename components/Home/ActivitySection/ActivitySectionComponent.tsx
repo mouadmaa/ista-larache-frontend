@@ -21,7 +21,9 @@ const ActivitySection: FC = () => {
 
   return (
     <ActivitySectionContainer>
-      <HeadingSecondary text="les activités à l'ista larache" />
+      <HeadingSecondary
+        text="les activités à l'ista larache"
+      />
 
       {data.activities.activities.map((activity, index) => (
         <ActivityCard

@@ -6,6 +6,7 @@ export const HeadingSecondaryContainer = styled.h2`
   font-size: 2.4rem;
   text-transform: uppercase;
   display: inline-block;
+  text-align: center;
   margin-bottom: 3rem;
   background-image: linear-gradient(to right, ${({ theme }) => theme.color.secondary}, ${({ theme }) => theme.color.tertiary});
   -webkit-background-clip: text;

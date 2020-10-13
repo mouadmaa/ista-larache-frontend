@@ -9,6 +9,7 @@ export const ButtonLinkContainer = styled.a`
   text-decoration: none;
   border-bottom: 1px solid ${({ theme }) => theme.color.primary};
   padding: 0.2rem 0.6rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: 0.3s;
 

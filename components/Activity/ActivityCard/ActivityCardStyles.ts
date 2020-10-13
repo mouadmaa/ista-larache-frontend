@@ -8,7 +8,7 @@ const getActivityCardContainerStyles = (activityCardContainerProps: ActivityCard
   return activityCardContainerProps.reverse && activityCardReverseStyles
 }
 
-export const ActivityCardContainer = styled.div`
+export const ActivityCardContainer = styled.section`
   ${getActivityCardContainerStyles}
 
   width: 100%;
@@ -47,7 +47,7 @@ const activityCardReverseStyles = css`
     }
 
     @media screen and (max-width: 37.5em) {
-      max-width: 80%;
+      width: 100%;
       transform: translate(0, -4rem);
     }
   }
@@ -106,7 +106,6 @@ export const ActivityCardImageContainer = styled.div`
     background: linear-gradient(to right bottom, rgba(38, 118, 171, 0.9), rgba(44, 138, 199, 0.2));
     box-shadow: ${({ theme }) => theme.shadow.white};
     border-radius: 0.8rem;
-
   }
 
   img {
