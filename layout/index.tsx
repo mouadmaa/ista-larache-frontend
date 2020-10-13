@@ -30,7 +30,8 @@ const HtmlHead = (
     <meta name="description" content="Institut Specialise De Technologie Appliquee Larache - OFPPT Larache" />
     <meta name="keywords" content="ista ofppt larache" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"></link>
+    {/* Google Fonts */}
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
     <title>ISTA LARACHE - OFPPT</title>
   </Head>

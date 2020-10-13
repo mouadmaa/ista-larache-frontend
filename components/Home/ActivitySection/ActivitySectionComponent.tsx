@@ -29,7 +29,6 @@ const ActivitySection: FC = () => {
         <ActivityCard
           key={activity.id}
           activity={activity}
-          maxLength={360}
           reverse={index % 2 !== 0}
         />
       ))}

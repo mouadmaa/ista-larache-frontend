@@ -5,6 +5,7 @@ import HeaderPrimary from '../layout/HeaderPrimary/HeaderPrimaryComponent'
 import AboutSection from '../components/Home/AboutSection/AboutSectionComponent'
 import FormationSection from '../components/Home/FormationSection/FormationSectionComponent'
 import ActivitySection, { ActivitiesQueryVars } from '../components/Home/ActivitySection/ActivitySectionComponent'
+import ContatcSection from '../components/Home/ContactSection/ContactSectionComponent'
 import { initializeApollo } from '../apollo/apolloClient'
 import { ActivitiesDocument, FormationsDocument } from '../generated/graphql'
 
@@ -15,6 +16,7 @@ const Home: FC = () => {
       <AboutSection />
       <FormationSection />
       <ActivitySection />
+      <ContatcSection />
     </Fragment>
   )
 }

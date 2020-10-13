@@ -13,7 +13,7 @@ export const ActivityCardContainer = styled.section`
 
   width: 100%;
   height: auto;
-  background-color: ${({ theme }) => theme.color.primaryWhite};
+  background-color: ${({ theme }) => theme.color.secondaryWhite};
   padding: 2rem;
   margin: 3rem 0;
   max-width: 125rem;

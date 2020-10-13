@@ -51,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: 1.7;
 
-    min-height: 300vh;
+    min-height: 600vh;
   }
 `
 export default GlobalStyle
