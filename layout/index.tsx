@@ -3,7 +3,8 @@ import Head from 'next/head'
 import 'antd/dist/antd.css'
 
 import GlobalStyle from '../styles/globalStyle'
-import Navbar from './Navbar/NavbarComponent'
+import Navigation from './Navigation/NavigationComponent'
+import Footer from './Footer/FooterComponent'
 
 interface LayoutProps { }
 
@@ -14,8 +15,9 @@ const Layout: FC<LayoutProps> = props => {
     <Fragment>
       {HtmlHead}
       <GlobalStyle />
-      <Navbar />
+      <Navigation />
       {children}
+      <Footer />
     </Fragment>
   )
 }

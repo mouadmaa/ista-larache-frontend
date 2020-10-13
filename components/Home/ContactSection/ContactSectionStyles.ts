@@ -5,7 +5,7 @@ export const ContactSectionContainer = styled.section`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 10rem 5vw;
+  padding: 6rem 5vw 10rem;
 `
 
 export const ContactSectionContent = styled.section`

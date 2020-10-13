@@ -50,8 +50,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fontFamily};
     font-weight: 400;
     line-height: 1.7;
-
-    min-height: 600vh;
   }
 `
 export default GlobalStyle

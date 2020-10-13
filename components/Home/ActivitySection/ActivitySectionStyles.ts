@@ -15,11 +15,15 @@ export const ActivitySectionContainer = styled.section`
     margin: 2rem 0 3rem;
 
     @media screen and (max-width: 37.5em) {
-      margin-top: 5rem;
+      margin-top: 15rem;
     }
   }
 
   a {
     margin-top: 3rem;
+
+    @media screen and (max-width: 37.5em) {
+      margin-bottom: 15rem;
+    }
   }
 `

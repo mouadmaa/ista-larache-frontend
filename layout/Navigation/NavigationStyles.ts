@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components'
 
-interface NavbarContainerProps {
-  showNavbarBackground: boolean
+interface NavigationContainerProps {
+  showNavigationBackground: boolean
 }
 
-const getNavbarContainerStyles = (navbarContainerProps: NavbarContainerProps) => {
-  return navbarContainerProps.showNavbarBackground && showNavbarBackground
+const getNavigationContainerStyles = (navbarContainerProps: NavigationContainerProps) => {
+  return navbarContainerProps.showNavigationBackground && showNavigationBackground
 }
 
-export const NavbarContainer = styled.nav`
-  ${getNavbarContainerStyles}
+export const NavigationContainer = styled.nav`
+  ${getNavigationContainerStyles}
 
   width: 100%;
   height: 12vh;
@@ -23,7 +23,7 @@ export const NavbarContainer = styled.nav`
   transition: 0.5s;
 `
 
-const showNavbarBackground = css`
+const showNavigationBackground = css`
   width: 100% !important;
   height: 8vh !important;
   background-color: rgba(41, 128, 185, 0.95) !important;
@@ -34,7 +34,7 @@ const showNavbarBackground = css`
   }
 `
 
-export const NavbarLogo = styled.div`
+export const NavigationLogo = styled.div`
   display: flex;
   align-items: center;
 
@@ -55,16 +55,16 @@ export const NavbarLogo = styled.div`
   }
 `
 
-interface NavbarListProps {
+interface NavigationListProps {
   active: boolean
 }
 
-const getNavbarListStyles = (navbatListProps: NavbarListProps) => {
+const getNavigationListStyles = (navbatListProps: NavigationListProps) => {
   return navbatListProps.active && navbarListActive
 }
 
-export const NavbarList = styled.ul`
-  ${getNavbarListStyles}
+export const NavigationList = styled.ul`
+  ${getNavigationListStyles}
 
   display: flex;
   align-items: center;
@@ -95,16 +95,16 @@ const navbarListActive = css`
   transform: translateX(0%) !important;
 `
 
-interface NavbarItemProps {
+interface NavigationItemProps {
   active: boolean
 }
 
-const getNavbarItemStyles = (navbarItem: NavbarItemProps) => {
+const getNavigationItemStyles = (navbarItem: NavigationItemProps) => {
   return navbarItem.active && navbarItemActive
 }
 
-export const NavbarItem = styled.li`
-  ${getNavbarItemStyles}
+export const NavigationItem = styled.li`
+  ${getNavigationItemStyles}
 
   margin: 0.2rem;
   position: relative;
@@ -114,8 +114,8 @@ const navbarItemActive = css`
   left: 0;
 `
 
-export const NavbarLink = styled.a`
-  color: ${({ theme }) => theme.color.primaryWhite};
+export const NavigationLink = styled.a`
+  color: ${({ theme }) => theme.color.primaryWhite} !important;
   position: relative;
   display: inline-block;
   padding: 0.2rem 0.6rem;
@@ -146,16 +146,16 @@ export const NavbarLink = styled.a`
   }
 `
 
-interface NavbarBurgerProps {
+interface NavigationBurgerProps {
   retateMenu: boolean
 }
 
-const getNavbarBurgerStyles = (navbarBurgerProps: NavbarBurgerProps) => {
+const getNavigationBurgerStyles = (navbarBurgerProps: NavigationBurgerProps) => {
   return navbarBurgerProps.retateMenu && navbarBurgerLine
 }
 
-export const NavbarBurger = styled.div`
-  ${getNavbarBurgerStyles}
+export const NavigationBurger = styled.div`
+  ${getNavigationBurgerStyles}
 
   display: none;
   justify-self: end;

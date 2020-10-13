@@ -12,6 +12,17 @@ export const ContactFormContainer = styled(Form)`
     grid-template-columns: 1fr;
   }
 
+  input, textarea {
+    border: none;
+    border-bottom: 1px solid ${({ theme }) => theme.color.primaryGray};
+    background-color: transparent;
+    border-radius: 0.3rem;
+
+    :hover, :focus, :active {
+      border-bottom: 1px solid ${({ theme }) => theme.color.secondaryGray};
+    }
+  }
+
   > div {
     width: 100%;
     height: 100%;
