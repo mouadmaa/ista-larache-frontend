@@ -20,7 +20,7 @@ export const HeaderSecondaryContainer = styled.header`
 
   h1 {
     margin-bottom: 0;
-    padding-right: 3rem;
+    padding: 0 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;

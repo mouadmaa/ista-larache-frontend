@@ -15,7 +15,7 @@ const Formations: FC = () => {
       </Head>
       <HeaderSecondary
         textMain="les formations assurées à l'établissement"
-        textSub="pour plus d'informations sur ces formations cliquez sur un."
+        textSub="pour plus d'informations sur ces formations cliquez sur un"
       />
       <FormationSection inPage />
     </Fragment>

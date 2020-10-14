@@ -14,7 +14,7 @@ const About: FC = () => {
       </Head>
       <HeaderSecondary
         textMain="à propos de ista larache"
-        textSub="quelques informations sur les conditions d'accès à la formation, et comment s'inscrire dans l'établissement."
+        textSub="quelques informations sur les conditions d'accès à la formation, et comment s'inscrire dans l'établissement"
       />
       <AboutSection inPage />
       <AboutPageContent>

@@ -137,7 +137,7 @@ export const NavigationLink = styled.a`
     right: 0;
     bottom: 0;
     width: 0;
-    height: 0.15rem;
+    height: 0.14rem;
     background-color: ${({ theme }) => theme.color.primaryWhite};
     transition: 0.3s;
   }

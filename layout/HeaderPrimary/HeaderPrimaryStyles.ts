@@ -115,6 +115,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
     p {
       font-size: 1.25rem;
       text-align: justify;
+      margin-bottom: 0;
     }
 
     @media screen and (max-width: 62.5em) {
@@ -126,7 +127,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: 20em) {
+  @media screen and (max-width: 25em) {
     grid-template-columns: 1fr;
   }
 `
