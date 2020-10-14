@@ -7,10 +7,10 @@ import HeadingPrimary from '../../components/UI/Heading/HeadingPrimary/HeadingPr
 import HeadingTertiary from '../../components/UI/Heading/HeadingTertiary/HeadingTertiaryComponent'
 
 const HeaderPrimary = () => {
-  const router = useRouter()
+  const { push } = useRouter()
 
   const handleClick = hash => {
-    router.push({ href: '/services', hash })
+    push({ href: '/services', hash })
   }
 
   return (

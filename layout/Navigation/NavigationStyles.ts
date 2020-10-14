@@ -9,10 +9,8 @@ const getNavigationContainerStyles = (navbarContainerProps: NavigationContainerP
 }
 
 export const NavigationContainer = styled.nav`
-  ${getNavigationContainerStyles}
-
   width: 100%;
-  height: 12vh;
+  height: 10vh;
   background: transparent;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -21,16 +19,18 @@ export const NavigationContainer = styled.nav`
   top: 0;
   z-index: 10;
   transition: 0.5s;
+
+  ${getNavigationContainerStyles}
 `
 
 const showNavigationBackground = css`
-  width: 100% !important;
-  height: 8vh !important;
-  background-color: rgba(41, 128, 185, 0.95) !important;
+  width: 100%;
+  height: 6vh;
+  background-color: rgba(41, 128, 185, 0.95);
   box-shadow: ${(({ theme }) => theme.shadow.white)};
 
   ul {
-    top: 8vh !important;
+    top: 6vh;
   }
 `
 
@@ -41,7 +41,7 @@ export const NavigationLogo = styled.div`
   a {
     color: ${({ theme }) => theme.color.primaryWhite};
     font-family: ${({ theme }) => theme.fontFamily};
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.8rem;
     letter-spacing: 0.2rem;
     text-decoration: none;
@@ -64,24 +64,22 @@ const getNavigationListStyles = (navbatListProps: NavigationListProps) => {
 }
 
 export const NavigationList = styled.ul`
-  ${getNavigationListStyles}
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  top: 10vh !important;
+  top: 10vh;
   margin-bottom: 0;
 
   @media screen and (max-width: 50em) {
     width: 75%;
-    height: 92vh;
+    height: 94vh;
     background-color: rgba(41, 128, 185, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 8vh;
+    top: 10vh;
     right: 0;
     flex-direction: column;
     justify-content: space-around;
@@ -89,6 +87,8 @@ export const NavigationList = styled.ul`
     transform: translateX(200%);
     transition: all 0.5s ease-in;
   }
+
+  ${getNavigationListStyles}
 `
 
 const navbarListActive = css`
@@ -120,9 +120,9 @@ export const NavigationLink = styled.a`
   color: ${({ theme }) => theme.color.primaryWhite} !important;
   position: relative;
   display: inline-block;
-  padding: 0.2rem 0.6rem;
+  padding: 0.1rem 0.6rem;
   font-family: ${({ theme }) => theme.fontFamily};
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
   text-decoration: none;
@@ -137,7 +137,7 @@ export const NavigationLink = styled.a`
     right: 0;
     bottom: 0;
     width: 0;
-    height: 0.16rem;
+    height: 0.15rem;
     background-color: ${({ theme }) => theme.color.primaryWhite};
     transition: 0.3s;
   }

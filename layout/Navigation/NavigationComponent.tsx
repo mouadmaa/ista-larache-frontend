@@ -64,9 +64,7 @@ const Navigation: FC = () => {
         retateMenu={showNavigationSlide}
         onClick={() => setShowNavigationSlide(!showNavigationSlide)}
       >
-        <div />
-        <div />
-        <div />
+        <div /><div /><div />
       </NavigationBurger>
     </NavigationContainer>
   )
