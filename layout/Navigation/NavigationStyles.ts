@@ -110,8 +110,10 @@ export const NavigationItem = styled.li`
   position: relative;
 `
 const navbarItemActive = css`
-  width: 100%;
-  left: 0;
+  a::after {
+    width: 100%;
+    left: 0;
+  }
 `
 
 export const NavigationLink = styled.a`

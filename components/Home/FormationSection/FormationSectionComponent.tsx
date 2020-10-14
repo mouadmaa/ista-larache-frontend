@@ -6,7 +6,13 @@ import ImagesSection from '../ImagesSetion/ImagesSetionComponent'
 import FormationCard from '../../Formation/FormationCard/FormationCardComponent'
 import { Formation, Level, useFormationsQuery } from '../../../generated/graphql'
 
-const FormationSection: FC = () => {
+interface FormationSectionProps {
+  inPage?: boolean
+}
+
+const FormationSection: FC<FormationSectionProps> = props => {
+  const { inPage = false } = props
+
   const { data } = useFormationsQuery()
 
   const levelWithFormations = getLevelWithFormations(
@@ -14,7 +20,10 @@ const FormationSection: FC = () => {
   )
 
   return (
-    <FormationSectionContainer>
+    <FormationSectionContainer
+      inPage={inPage}
+    >
+
       <HeadingSecondary
         text="Les Formations assurées à l' ista larache"
       />
@@ -25,6 +34,7 @@ const FormationSection: FC = () => {
             key={index}
             level={item.level}
             formations={item.formations}
+            defaultChecked={inPage}
           />
         ))}
       </FormationSectionContent>

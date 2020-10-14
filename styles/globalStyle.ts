@@ -45,11 +45,20 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    color: ${({ theme }) => theme.color.primary_gray};
+    color: ${({ theme }) => theme.color.primaryGray};
     background-color: ${({ theme }) => theme.color.secondaryWhite};
     font-family: ${({ theme }) => theme.fontFamily};
     font-weight: 400;
     line-height: 1.7;
+  }
+
+  #nprogress > div.bar {
+    background-color: ${({ theme }: any) => theme.color.primaryWhite};;
+  }
+
+  #nprogress > div.spinner > div {
+    border-top-color: ${({ theme }: any) => theme.color.primaryWhite};;
+    border-left-color: ${({ theme }: any) => theme.color.primaryWhite};;
   }
 `
 export default GlobalStyle

@@ -12,7 +12,11 @@ export const FooterContainer = styled.footer`
   padding: 8rem 5vw 1rem;
 
   > * {
-    padding: 2rem;
+    padding: 2rem 2rem 0;
+
+    @media screen and (max-width: 37.5em) {
+      padding: 0;
+    }
   }
 
   @media screen and (max-width: 75em) {
@@ -131,25 +135,30 @@ export const FooterNavigationContainer = styled.div`
     letter-spacing: 0.2rem;
     border-top: 1px solid ${({ theme }) => theme.color.primaryGray};
 
+    @media screen and (max-width: 37.5em) {
+      padding: 2rem 0 0;
+    }
+
     h3 {
       color: ${({ theme }) => theme.color.primaryWhite};
     }
   }
 
   ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    list-style: none;
+    flex-wrap: wrap;
 
     @media screen and (max-width: 37.5em) {
       flex-direction: row;
-      justify-content: space-around;
     }
 
     li {
       display: inline-block;
       padding: 0.5rem;
+      flex: 1 1 auto;
 
       a {
         font-size: 1.2rem;
@@ -184,6 +193,10 @@ export const FooterAdressContainer = styled.div`
     letter-spacing: 0.2rem;
     border-top: 1px solid ${({ theme }) => theme.color.primaryGray};
 
+    @media screen and (max-width: 37.5em) {
+      padding: 2rem 0 0;
+    }
+
     h3 {
       color: ${({ theme }) => theme.color.primaryWhite};
     }
@@ -217,9 +230,11 @@ export const FooterCopyrightContainer = styled.div`
   justify-content: center;
   align-items: center;
   grid-column: 1 / -1;
+  padding-bottom: 2rem;
 
   @media screen and (max-width: 37.5em) {
     flex-direction: column;
+    padding-top: 2rem;
   }
 
   a {

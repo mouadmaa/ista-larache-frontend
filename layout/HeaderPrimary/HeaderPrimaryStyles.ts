@@ -101,6 +101,10 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
     @media screen and (max-width: 62.5em) {
       height: 7rem;
     }
+
+    @media screen and (max-width: 20em) {
+      display: none;
+    }
   }
 
   div {
@@ -120,5 +124,9 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
     @media screen and (max-width: 37.5em) {
       text-align: left;
     }
+  }
+
+  @media screen and (max-width: 20em) {
+    grid-template-columns: 1fr;
   }
 `

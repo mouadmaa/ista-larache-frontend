@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface FormationSectionContainerProps {
+  inPage: boolean
+}
+
+const getFormationSectionContainerStyles = (formationSectionContainerProps: FormationSectionContainerProps) => {
+  return formationSectionContainerProps.inPage && formationSectionContainerStyles
+}
 
 export const FormationSectionContainer = styled.section`
   display: flex;
@@ -6,6 +14,8 @@ export const FormationSectionContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   padding: 4rem 5vw 10rem;
+
+  ${getFormationSectionContainerStyles}
 
   section {
     margin-top: 1rem;
@@ -32,6 +42,18 @@ export const FormationSectionContainer = styled.section`
 
   @media only screen and (max-width: 37.5em) {
     padding-bottom: 5rem;
+  }
+`
+
+const formationSectionContainerStyles = css`
+  padding: 10rem 5vw 14rem;
+
+  > div {
+    margin: 2rem 0 8rem;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    padding: 8rem 5vw;
   }
 `
 

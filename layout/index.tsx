@@ -1,6 +1,10 @@
 import { FC, Fragment } from 'react'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
+import { BackTop } from 'antd'
+
 import 'antd/dist/antd.css'
+import 'nprogress/nprogress.css'
 
 import GlobalStyle from '../styles/globalStyle'
 import Navigation from './Navigation/NavigationComponent'
@@ -15,14 +19,23 @@ const Layout: FC<LayoutProps> = props => {
     <Fragment>
       {HtmlHead}
       <GlobalStyle />
+      <TopProgressBar />
       <Navigation />
       {children}
+      <BackTop />
       <Footer />
     </Fragment>
   )
 }
 
 export default Layout
+
+const TopProgressBar = dynamic(
+  () => {
+    return import('@/components/UI/TopProgressBar/TopProgressBar')
+  },
+  { ssr: false },
+)
 
 const HtmlHead = (
   <Head>
