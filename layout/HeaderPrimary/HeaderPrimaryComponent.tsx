@@ -10,7 +10,7 @@ const HeaderPrimary = () => {
   const { push } = useRouter()
 
   const handleClick = hash => {
-    push({ href: '/services', hash })
+    push(`/services#${hash}`)
   }
 
   return (
@@ -39,7 +39,7 @@ const HeaderPrimary = () => {
           </div>
         </HeaderPrimaryServerBoxContainer>
 
-        <HeaderPrimaryServerBoxContainer onClick={() => handleClick('registration')}>
+        <HeaderPrimaryServerBoxContainer onClick={() => handleClick('register')}>
           <img src='images/register.png' alt="register" />
           <div>
             <HeadingTertiary text='Inscription et vérifiez votre acceptation' />

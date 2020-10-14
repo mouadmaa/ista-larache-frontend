@@ -35,8 +35,8 @@ const ActivitySection: FC = () => {
 
       <ButtonLink
         href='/activities'
-        as='/activities'
         text='Afficher tous les activités'
+        passHref
       />
     </ActivitySectionContainer>
   )

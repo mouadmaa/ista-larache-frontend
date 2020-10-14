@@ -23,38 +23,38 @@ const Navigation: FC = () => {
   return (
     <NavigationContainer showNavigationBackground={showNavigationBackground}>
       <NavigationLogo>
-        <Link href='/' as='/'>
+        <Link href='/' passHref>
           <a>ISTA LARACHE</a>
         </Link>
       </NavigationLogo>
 
       <NavigationList active={showNavigationSlide}>
         <NavigationItem active={asPath.startsWith('/services')}>
-          <Link href="/services" as='/services'>
+          <Link href="/services" passHref>
             <NavigationLink>Services</NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={asPath.startsWith('/formations')}>
-          <Link href="/formations" as='/formations'>
+          <Link href="/formations" passHref>
             <NavigationLink>Formations</NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={asPath.startsWith('/activities')}>
-          <Link href="/activities" as='/activities'>
+          <Link href="/activities" passHref>
             <NavigationLink>Activités</NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={asPath.startsWith('/about')}>
-          <Link href="/about" as='/about'>
+          <Link href="/about" passHref>
             <NavigationLink>Propos</NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={asPath.startsWith('/contact')}>
-          <Link href="/contact" as='/contact'>
+          <Link href="/contact" passHref>
             <NavigationLink>Contact</NavigationLink>
           </Link>
         </NavigationItem>

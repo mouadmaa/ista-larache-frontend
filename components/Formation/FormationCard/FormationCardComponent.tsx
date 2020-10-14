@@ -31,7 +31,6 @@ const FormationCard: FC<FormationCardProps> = props => {
           <ButtonLink
             key={formation.id}
             href={formation.descUrl}
-            as={formation.descUrl}
             text={formation.name}
           />
         ))}

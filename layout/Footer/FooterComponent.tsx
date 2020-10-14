@@ -13,7 +13,7 @@ const Footer: FC = () => {
       <FooterAboutContainer>
         <div>
           <img src='images/logo.png' alt="logo ista" />
-          <Link href='/' as='/'><a>ISTA LARACHE</a></Link>
+          <Link href='/' passHref><a>ISTA LARACHE</a></Link>
         </div>
 
         <p>
@@ -23,22 +23,22 @@ const Footer: FC = () => {
 
         <FooterSocialList>
           <li>
-            <Link href='/' as='/'>
+            <Link href='/' passHref>
               <a><img className="footer__social-img" src='icons/facebook.png' alt="icon facebook" /></a>
             </Link>
           </li>
           <li>
-            <Link href='/' as='/'>
+            <Link href='/' passHref>
               <a><img className="footer__social-img" src='icons/twitter.png' alt="icon twitter" /></a>
             </Link>
           </li>
           <li>
-            <Link href='/' as='/'>
+            <Link href='/' passHref>
               <a><img className="footer__social-img" src='icons/google.png' alt="icon google plus" /></a>
             </Link>
           </li>
           <li>
-            <Link href='/' as='/'>
+            <Link href='/' passHref>
               <a><img className="footer__social-img" src='icons/instagram.png' alt="icon instagram" /></a>
             </Link>
           </li>
@@ -50,31 +50,31 @@ const Footer: FC = () => {
 
         <ul className="footer__list">
           <li>
-            <Link href="/services" as="/services">
+            <Link href="/services" passHref>
               <a>Services</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/formations" as="/formations">
+            <Link href="/formations" passHref>
               <a>Formations</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/activities" as="/activites">
+            <Link href="/activities" passHref>
               <a>Activités</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/about" as="/about">
+            <Link href="/about" passHref>
               <a>Propos</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/contact" as="/contact">
+            <Link href="/contact" passHref>
               <a>Contact</a>
             </Link>
           </li>
@@ -107,11 +107,11 @@ const Footer: FC = () => {
           Copyright © {new Date().getFullYear()}&nbsp;
           All Rights Reserved. Created By&nbsp;
         </p>
-        <Link href='/' as='/'>
+        <Link href='/' passHref>
           <a>Mouad Maaroufi</a>
         </Link>
         &nbsp;&&nbsp;
-        <Link href='/' as='/'>
+        <Link href='/' passHref>
           <a>Achraf Hlimi</a>
         </Link>
       </FooterCopyrightContainer>

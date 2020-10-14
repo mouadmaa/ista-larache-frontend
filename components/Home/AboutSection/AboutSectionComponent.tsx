@@ -19,7 +19,8 @@ const AboutSection: FC<AboutSectionProps> = props => {
 
   const buttonLink = inPage
     ? (
-      <ButtonLinkContainer target='_blanck'
+      <ButtonLinkContainer
+        target='_blanck'
         href='https://inscription.ma/inscription-ofppt-ista-ita-maroc/'
       >
         cliquez ici pour inscrire
@@ -27,8 +28,8 @@ const AboutSection: FC<AboutSectionProps> = props => {
     ) : (
       <ButtonLink
         href='/about'
-        as='/about'
         text='Afficher plus de détails'
+        passHref
       />
     )
 
