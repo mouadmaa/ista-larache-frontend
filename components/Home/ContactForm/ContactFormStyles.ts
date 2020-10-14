@@ -6,7 +6,7 @@ export const ContactFormContainer = styled(Form)`
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 3rem;
 
   @media screen and (max-width: 37.5em) {
     grid-template-columns: 1fr;

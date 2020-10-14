@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface AboutSectionContainerProps {
+  inPage: boolean
+}
+
+const getAboutSectionContainerStyles = (props: AboutSectionContainerProps) => {
+  return props.inPage && aboutSectionContainerStyles
+}
 
 export const AboutSectionContainer = styled.section`
   display: flex;
@@ -37,5 +45,31 @@ export const AboutSectionContainer = styled.section`
       height: 10rem;
       max-width: 80vw;
     }
+  }
+
+  ${getAboutSectionContainerStyles}
+`
+
+const aboutSectionContainerStyles = css`
+  a {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+`
+
+export const AboutPageContent = styled.section`
+  text-align: left;
+  padding: 0 5vw 10rem;
+  margin-top: -6rem;
+
+  h3 {
+    margin-top: 3rem;
+  }
+
+  h4 {
+    margin-top: 2rem;
+    font-weight: 600;
+    text-decoration: underline;
   }
 `
