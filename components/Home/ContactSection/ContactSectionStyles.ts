@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const ContactSectionContainer = styled.section`
   display: flex;
@@ -7,6 +7,14 @@ export const ContactSectionContainer = styled.section`
   flex-direction: column;
   padding: 8rem 5vw 12rem;
 `
+
+interface ContactSectionContentProps {
+  inPage: boolean
+}
+
+const getContactSectionContentStyles = (props: ContactSectionContentProps) => {
+  return props.inPage && contactSectionContentStyles
+}
 
 export const ContactSectionContent = styled.section`
   display: grid;
@@ -17,6 +25,14 @@ export const ContactSectionContent = styled.section`
   @media screen and (max-width: 75em) {
     grid-template-columns: minmax(200px, 800px);
   }
+
+  ${getContactSectionContentStyles}
+`
+
+const contactSectionContentStyles = css`
+  display: grid;
+  grid-template-columns: minmax(200px, 1000px);
+  grid-template-rows: 35rem;
 `
 
 export const ContactSectionAdress = styled.div`
