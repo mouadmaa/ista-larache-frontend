@@ -43,6 +43,14 @@ export const NoteSectionContainer = styled.section`
 
   > div :first-of-type {
     width: 100%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
 
     h3 {
       font-size: 1.2rem;

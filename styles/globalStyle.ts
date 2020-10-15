@@ -39,17 +39,17 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  ::selection {
-    background-color: ${({ theme }) => theme.color.primary};
-    color: ${({ theme }: any) => theme.color.primaryWhite};
-  }
-
   body {
     color: ${({ theme }) => theme.color.primaryGray};
     background-color: ${({ theme }) => theme.color.secondaryWhite};
     font-family: ${({ theme }) => theme.fontFamily};
     font-weight: 400;
     line-height: 1.7;
+  }
+
+  ::selection {
+    background-color: ${({ theme }) => theme.color.primary};
+    color: ${({ theme }: any) => theme.color.primaryWhite};
   }
 
   /* NProgress */

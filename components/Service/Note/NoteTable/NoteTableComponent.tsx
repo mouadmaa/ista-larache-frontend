@@ -24,22 +24,32 @@ const NoteTable: FC<NoteTableProps> = props => {
     {
       title: "Module",
       dataIndex: "moduleName",
+      width: '20%',
+      fixed: 'left',
     },
     {
-      title: "Premier Note",
+      title: "Note 1",
       dataIndex: "note1",
+      sorter: (a, b) => a.note1 - b.note1,
+      width: '20%',
     },
     {
-      title: "Deuxième Note",
+      title: "Note 2",
       dataIndex: "note2",
+      sorter: (a, b) => a.note2 - b.note2,
+      width: '20%',
     },
     {
-      title: "Troisième Note",
+      title: "Note 3",
       dataIndex: "note3",
+      sorter: (a, b) => a.note3 - b.note3,
+      width: '20%',
     },
     {
-      title: "Note de l'EFM",
+      title: "EFM",
       dataIndex: "efm",
+      sorter: (a, b) => a.efm - b.efm,
+      width: '20%',
     }
   ]
 
@@ -53,6 +63,7 @@ const NoteTable: FC<NoteTableProps> = props => {
       columns={columns}
       dataSource={dataSource}
       pagination={{ pageSize: 8 }}
+      scroll={{ x: 600 }}
       size='middle'
     />
   )

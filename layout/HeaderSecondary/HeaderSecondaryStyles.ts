@@ -29,6 +29,9 @@ export const HeaderSecondaryContainer = styled.header`
     @media screen and (max-width: 75em) {
       align-items: center;
       justify-content: center;
+    }
+
+    @media screen and (max-width: 62.5em) {
       padding: 0 4rem;
     }
 

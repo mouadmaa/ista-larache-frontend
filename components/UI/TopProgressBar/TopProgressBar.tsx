@@ -6,6 +6,8 @@ let state
 let activeRequests = 0
 const delay = 250
 
+NProgress.configure({ minimum: 0.4 })
+
 const load = () => {
   if (state === 'loading') return
 

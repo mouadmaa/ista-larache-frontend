@@ -18,10 +18,13 @@ const NoteForm: FC<NoteFormProps> = props => {
   const [getStudentNotes, { loading }] = useStudentNotesMutation()
 
   const handleSubmit = async () => {
-    const variables = await form.validateFields() as StudentNotesMutationVariables
-    const { data, errors } = await getStudentNotes({ variables })
-    if (data?.studentNotes) setStudentNotes(data.studentNotes as Student)
-    if (errors?.length) message.error(errors[0].message)
+    try {
+      const variables = await form.validateFields() as StudentNotesMutationVariables
+      const { data } = await getStudentNotes({ variables })
+      if (data?.studentNotes) setStudentNotes(data.studentNotes as Student)
+    } catch (error) {
+      message.error(error.message)
+    }
   }
 
   return (

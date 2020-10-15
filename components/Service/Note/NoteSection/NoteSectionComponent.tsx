@@ -19,7 +19,6 @@ const NoteSection: FC = () => {
     if (router.asPath.includes('#notes')) {
       scrollToElement(notesRef)
     }
-    console.log(studentNotes)
   }, [router, studentNotes])
 
   return (
