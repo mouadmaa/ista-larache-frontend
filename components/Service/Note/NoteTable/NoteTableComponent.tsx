@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, Fragment } from 'react'
 import { ColumnsType } from 'antd/lib/table'
 import { Table } from 'antd'
 
@@ -65,6 +65,22 @@ const NoteTable: FC<NoteTableProps> = props => {
       pagination={{ pageSize: 8 }}
       scroll={{ x: 600 }}
       size='middle'
+      summary={() => (
+        <Fragment>
+          {studentNote.finalNote1 && (
+            <Table.Summary.Row>
+              <Table.Summary.Cell index={0}>Note finale de 1 année:</Table.Summary.Cell>
+              <Table.Summary.Cell index={1}>{studentNote.finalNote1.toFixed(2)}</Table.Summary.Cell>
+            </Table.Summary.Row>
+          )}
+          {studentNote.finalNote2 && (
+            <Table.Summary.Row>
+              <Table.Summary.Cell index={0}>Note finale de 2 année:</Table.Summary.Cell>
+              <Table.Summary.Cell index={1}>{studentNote.finalNote2.toFixed(2)}</Table.Summary.Cell>
+            </Table.Summary.Row>
+          )}
+        </Fragment>
+      )}
     />
   )
 }
