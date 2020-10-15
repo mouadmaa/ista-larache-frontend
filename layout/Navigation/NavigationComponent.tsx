@@ -11,7 +11,7 @@ const Navigation: FC = () => {
   const [showNavigationBackground, setShowNavigationBackground] = useState(false)
   const [showNavigationSlide, setShowNavigationSlide] = useState(false)
 
-  const { asPath } = useRouter()
+  const { pathname } = useRouter()
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -29,31 +29,31 @@ const Navigation: FC = () => {
       </NavigationLogo>
 
       <NavigationList active={showNavigationSlide}>
-        <NavigationItem active={asPath.startsWith('/services')}>
+        <NavigationItem active={pathname === '/services'}>
           <Link href="/services" passHref>
             <NavigationLink>Services</NavigationLink>
           </Link>
         </NavigationItem>
 
-        <NavigationItem active={asPath.startsWith('/formations')}>
+        <NavigationItem active={pathname === '/formations'}>
           <Link href="/formations" passHref>
             <NavigationLink>Formations</NavigationLink>
           </Link>
         </NavigationItem>
 
-        <NavigationItem active={asPath.startsWith('/activities')}>
+        <NavigationItem active={pathname === '/activities'}>
           <Link href="/activities" passHref>
             <NavigationLink>Activités</NavigationLink>
           </Link>
         </NavigationItem>
 
-        <NavigationItem active={asPath.startsWith('/about')}>
+        <NavigationItem active={pathname === '/about'}>
           <Link href="/about" passHref>
             <NavigationLink>Propos</NavigationLink>
           </Link>
         </NavigationItem>
 
-        <NavigationItem active={asPath.startsWith('/contact')}>
+        <NavigationItem active={pathname === '/contact'}>
           <Link href="/contact" passHref>
             <NavigationLink>Contact</NavigationLink>
           </Link>

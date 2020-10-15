@@ -137,7 +137,6 @@ export type Student = {
   notes: Array<Note>;
   finalNote1?: Maybe<Scalars['Float']>;
   finalNote2?: Maybe<Scalars['Float']>;
-  class: Class;
 };
 
 export type Note = {
@@ -210,6 +209,7 @@ export type Mutation = {
   createStudent: Student;
   updateStudent: Student;
   deleteStudent: Student;
+  studentNotes?: Maybe<Student>;
   createNote: Note;
   updateNote: Note;
   deleteNote: Note;
@@ -299,6 +299,12 @@ export type MutationUpdateStudentArgs = {
 
 export type MutationDeleteStudentArgs = {
   where: StudentWhereUniqueInput;
+};
+
+
+export type MutationStudentNotesArgs = {
+  cinOrCef: Scalars['String'];
+  password: Scalars['String'];
 };
 
 
@@ -476,6 +482,43 @@ export type FormationFragment = (
   & Pick<Formation, 'id' | 'name' | 'descUrl' | 'level'>
 );
 
+export type ModuleFragment = (
+  { __typename?: 'Module' }
+  & Pick<Module, 'id' | 'number' | 'name'>
+);
+
+export type NoteFragment = (
+  { __typename?: 'Note' }
+  & Pick<Note, 'id' | 'note1' | 'note2' | 'note3' | 'efm'>
+);
+
+export type StudentFragment = (
+  { __typename?: 'Student' }
+  & Pick<Student, 'id' | 'fullName' | 'cef' | 'cin' | 'password' | 'finalNote1' | 'finalNote2'>
+);
+
+export type StudentNotesMutationVariables = Exact<{
+  cinOrCef: Scalars['String'];
+  password: Scalars['String'];
+}>;
+
+
+export type StudentNotesMutation = (
+  { __typename?: 'Mutation' }
+  & { studentNotes?: Maybe<(
+    { __typename?: 'Student' }
+    & { notes: Array<(
+      { __typename?: 'Note' }
+      & { module: (
+        { __typename?: 'Module' }
+        & ModuleFragment
+      ) }
+      & NoteFragment
+    )> }
+    & StudentFragment
+  )> }
+);
+
 export type ActivitiesQueryVariables = Exact<{
   take?: Maybe<Scalars['Int']>;
   skip?: Maybe<Scalars['Int']>;
@@ -525,6 +568,74 @@ export const FormationFragmentDoc = gql`
   level
 }
     `;
+export const ModuleFragmentDoc = gql`
+    fragment Module on Module {
+  id
+  number
+  name
+}
+    `;
+export const NoteFragmentDoc = gql`
+    fragment Note on Note {
+  id
+  note1
+  note2
+  note3
+  efm
+}
+    `;
+export const StudentFragmentDoc = gql`
+    fragment Student on Student {
+  id
+  fullName
+  cef
+  cin
+  password
+  finalNote1
+  finalNote2
+}
+    `;
+export const StudentNotesDocument = gql`
+    mutation StudentNotes($cinOrCef: String!, $password: String!) {
+  studentNotes(cinOrCef: $cinOrCef, password: $password) {
+    ...Student
+    notes {
+      ...Note
+      module {
+        ...Module
+      }
+    }
+  }
+}
+    ${StudentFragmentDoc}
+${NoteFragmentDoc}
+${ModuleFragmentDoc}`;
+export type StudentNotesMutationFn = Apollo.MutationFunction<StudentNotesMutation, StudentNotesMutationVariables>;
+
+/**
+ * __useStudentNotesMutation__
+ *
+ * To run a mutation, you first call `useStudentNotesMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useStudentNotesMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [studentNotesMutation, { data, loading, error }] = useStudentNotesMutation({
+ *   variables: {
+ *      cinOrCef: // value for 'cinOrCef'
+ *      password: // value for 'password'
+ *   },
+ * });
+ */
+export function useStudentNotesMutation(baseOptions?: Apollo.MutationHookOptions<StudentNotesMutation, StudentNotesMutationVariables>) {
+        return Apollo.useMutation<StudentNotesMutation, StudentNotesMutationVariables>(StudentNotesDocument, baseOptions);
+      }
+export type StudentNotesMutationHookResult = ReturnType<typeof useStudentNotesMutation>;
+export type StudentNotesMutationResult = Apollo.MutationResult<StudentNotesMutation>;
+export type StudentNotesMutationOptions = Apollo.BaseMutationOptions<StudentNotesMutation, StudentNotesMutationVariables>;
 export const ActivitiesDocument = gql`
     query Activities($take: Int, $skip: Int, $orderBy: ActivityOrderByInput) {
   activities(take: $take, skip: $skip, orderBy: $orderBy) {

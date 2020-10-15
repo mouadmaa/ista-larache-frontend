@@ -1,0 +1,9 @@
+fragment Student on Student {
+  id
+  fullName
+  cef
+  cin
+  password
+  finalNote1
+  finalNote2
+}

@@ -1,13 +1,16 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { FC, Fragment, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 
 import { NoteSectionContainer } from './NoteSectionStyles'
-import { scrollToElement } from '../../../../utils/scrollToElement'
 import HeadingSecondary from '@/components/UI/Heading/HeadingScondary/HeadingScondaryComponent'
+import Button from '@/components/UI/Button/Button/ButtonComponent'
 import { Student } from '@/generated/graphql'
+import { scrollToElement } from '../../../../utils/scrollToElement'
+import NoteForm from '../NoteForm/NoteFormComponent'
+import NoteTable from '../NoteTable/NoteTableComponent'
 
 const NoteSection: FC = () => {
-  const [student, setStudent] = useState<Student>()
+  const [studentNotes, setStudentNotes] = useState<Student>()
 
   const router = useRouter()
   const notesRef = useRef()
@@ -16,23 +19,42 @@ const NoteSection: FC = () => {
     if (router.asPath.includes('#notes')) {
       scrollToElement(notesRef)
     }
-  }, [router])
+    console.log(studentNotes)
+  }, [router, studentNotes])
 
   return (
-    <NoteSectionContainer>
+    <NoteSectionContainer
+      ref={notesRef}
+      tableVisible={Boolean(studentNotes)}
+    >
       <HeadingSecondary
         text="les notes d'examen et la note finale de l'année"
       />
 
-      <h3>Form</h3>
-
-      {!student && (
-        <div>
-          <img
-            src='images/student.png'
-            alt="student"
+      {!studentNotes && (
+        <Fragment>
+          <NoteForm
+            setStudentNotes={setStudentNotes}
           />
-        </div>
+          <div>
+            <img
+              src='images/student.png'
+              alt="student"
+            />
+          </div>
+        </Fragment>
+      )}
+
+      {studentNotes && (
+        <Fragment>
+          <NoteTable
+            studentNote={studentNotes}
+          />
+          <Button
+            onClick={() => setStudentNotes(undefined)}
+            text='Cache la table des notes'
+          />
+        </Fragment>
       )}
     </NoteSectionContainer>
   )

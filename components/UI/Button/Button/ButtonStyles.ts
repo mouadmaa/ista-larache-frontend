@@ -28,6 +28,14 @@ export const ButtonContainer = styled.button`
     transform: translateY(1px);
     box-shadow: ${({ theme }) => theme.shadow.black};
   }
+
+  > div {
+    transform: translateX(-0.6rem);
+
+    span i {
+      background-color: ${({ theme }) => theme.color.primaryWhite};
+    }
+  }
 `
 
 

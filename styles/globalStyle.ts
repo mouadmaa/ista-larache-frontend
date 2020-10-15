@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7;
   }
 
+  /* NProgress */
   #nprogress > div.bar {
     background-color: ${({ theme }: any) => theme.color.primaryWhite};;
   }

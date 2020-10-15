@@ -1,0 +1,17 @@
+mutation StudentNotes(
+  $cinOrCef: String!
+  $password: String!
+) {
+  studentNotes(
+    cinOrCef: $cinOrCef
+    password: $password
+  ) {
+    ...Student
+    notes {
+      ...Note
+      module {
+        ...Module
+      }
+    }
+  }
+}
