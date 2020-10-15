@@ -1,0 +1,6 @@
+fragment Class on Class {
+  id
+  year
+  group
+  timetable
+}

@@ -34,7 +34,7 @@ const ContactForm: FC = () => {
           },
           {
             min: 3,
-            message: 'Entrez au moins 3 caractères!',
+            message: 'Doit être au moins 3 caractères!',
           },
         ]}
       >
@@ -48,7 +48,7 @@ const ContactForm: FC = () => {
         rules={[
           {
             required: true,
-            message: 'Le mail est obligatoire!',
+            message: 'Le email est obligatoire!',
           },
           {
             type: 'email',
@@ -70,7 +70,7 @@ const ContactForm: FC = () => {
           },
           {
             min: 6,
-            message: 'Entrez au moins 6 caractères!',
+            message: 'Doit être au moins 6 caractères!',
           },
         ]}
       >

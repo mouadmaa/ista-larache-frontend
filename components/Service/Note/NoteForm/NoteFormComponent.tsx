@@ -42,16 +42,16 @@ const NoteForm: FC<NoteFormProps> = props => {
           rules={[
             {
               required: true,
-              message: 'Le nom est obligatoire!',
+              message: 'Le cin ou cef est obligatoire!',
             },
             {
               min: 6,
-              message: 'Entrez au moins 6 caractères!',
+              message: 'Doit être au moins 6 caractères!',
             },
           ]}
         >
           <Input
-            placeholder="votre cin or cef?"
+            placeholder="votre cin ou cef?"
           />
         </Form.Item>
         <Form.Item
@@ -59,11 +59,11 @@ const NoteForm: FC<NoteFormProps> = props => {
           rules={[
             {
               required: true,
-              message: 'Le mail est obligatoire!',
+              message: 'Le password est obligatoire!',
             },
             {
               len: 6,
-              message: 'Entrez 6 caractères!',
+              message: 'Doit comporter 6 caractères',
             },
           ]}
         >

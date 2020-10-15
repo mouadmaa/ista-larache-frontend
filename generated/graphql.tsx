@@ -137,6 +137,7 @@ export type Student = {
   notes: Array<Note>;
   finalNote1?: Maybe<Scalars['Float']>;
   finalNote2?: Maybe<Scalars['Float']>;
+  class: Class;
 };
 
 export type Note = {
@@ -477,6 +478,11 @@ export type ActivityFragment = (
   & Pick<Activity, 'id' | 'image' | 'title' | 'desc' | 'date' | 'creator' | 'slug'>
 );
 
+export type ClassFragment = (
+  { __typename?: 'Class' }
+  & Pick<Class, 'id' | 'year' | 'group' | 'timetable'>
+);
+
 export type FormationFragment = (
   { __typename?: 'Formation' }
   & Pick<Formation, 'id' | 'name' | 'descUrl' | 'level'>
@@ -549,6 +555,21 @@ export type FormationsQuery = (
   )> }
 );
 
+export type FormationsWithClassesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type FormationsWithClassesQuery = (
+  { __typename?: 'Query' }
+  & { formations: Array<(
+    { __typename?: 'Formation' }
+    & { classes: Array<(
+      { __typename?: 'Class' }
+      & ClassFragment
+    )> }
+    & FormationFragment
+  )> }
+);
+
 export const ActivityFragmentDoc = gql`
     fragment Activity on Activity {
   id
@@ -558,6 +579,14 @@ export const ActivityFragmentDoc = gql`
   date
   creator
   slug
+}
+    `;
+export const ClassFragmentDoc = gql`
+    fragment Class on Class {
+  id
+  year
+  group
+  timetable
 }
     `;
 export const FormationFragmentDoc = gql`
@@ -706,3 +735,39 @@ export function useFormationsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type FormationsQueryHookResult = ReturnType<typeof useFormationsQuery>;
 export type FormationsLazyQueryHookResult = ReturnType<typeof useFormationsLazyQuery>;
 export type FormationsQueryResult = Apollo.QueryResult<FormationsQuery, FormationsQueryVariables>;
+export const FormationsWithClassesDocument = gql`
+    query FormationsWithClasses {
+  formations {
+    ...Formation
+    classes {
+      ...Class
+    }
+  }
+}
+    ${FormationFragmentDoc}
+${ClassFragmentDoc}`;
+
+/**
+ * __useFormationsWithClassesQuery__
+ *
+ * To run a query within a React component, call `useFormationsWithClassesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useFormationsWithClassesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useFormationsWithClassesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useFormationsWithClassesQuery(baseOptions?: Apollo.QueryHookOptions<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>) {
+        return Apollo.useQuery<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>(FormationsWithClassesDocument, baseOptions);
+      }
+export function useFormationsWithClassesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>) {
+          return Apollo.useLazyQuery<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>(FormationsWithClassesDocument, baseOptions);
+        }
+export type FormationsWithClassesQueryHookResult = ReturnType<typeof useFormationsWithClassesQuery>;
+export type FormationsWithClassesLazyQueryHookResult = ReturnType<typeof useFormationsWithClassesLazyQuery>;
+export type FormationsWithClassesQueryResult = Apollo.QueryResult<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>;
