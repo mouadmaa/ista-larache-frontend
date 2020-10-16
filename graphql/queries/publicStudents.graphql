@@ -1,0 +1,14 @@
+query PublicStudents(
+  $classId: String!
+){
+  publicStudents(
+    where: {
+      classId: $classId
+    }
+  ) {
+    id
+    fullName
+    cef
+    cin
+  }
+}

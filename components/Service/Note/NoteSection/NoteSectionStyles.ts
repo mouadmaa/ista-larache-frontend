@@ -21,6 +21,7 @@ export const NoteSectionContainer = styled.section`
 
     @media screen and (max-width: 62.5em) {
       font-size: 2rem;
+      margin-bottom: 2rem;
     }
   }
 
@@ -51,13 +52,8 @@ export const NoteSectionContainer = styled.section`
       display: none;
     }
 
-
     h3 {
       font-size: 1.2rem;
-    }
-
-    transform: rotateX('180dg');
-    @media screen and (max-width: 37.5em) {
     }
   }
 

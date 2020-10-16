@@ -23,6 +23,7 @@ export type Query = {
   classes: Array<Class>;
   student?: Maybe<Student>;
   students: Array<Student>;
+  publicStudents: Array<PublicStudent>;
   notes: Array<Note>;
   activity?: Maybe<Activity>;
   activities?: Maybe<Activities>;
@@ -41,6 +42,11 @@ export type QueryClassArgs = {
 
 export type QueryStudentArgs = {
   where: StudentWhereUniqueInput;
+};
+
+
+export type QueryPublicStudentsArgs = {
+  where: PublicStudentWhereClassInput;
 };
 
 
@@ -157,6 +163,18 @@ export type ClassWhereUniqueInput = {
 
 export type StudentWhereUniqueInput = {
   id: Scalars['String'];
+};
+
+export type PublicStudentWhereClassInput = {
+  classId: Scalars['String'];
+};
+
+export type PublicStudent = {
+  __typename?: 'PublicStudent';
+  id: Scalars['String'];
+  fullName: Scalars['String'];
+  cef?: Maybe<Scalars['String']>;
+  cin?: Maybe<Scalars['String']>;
 };
 
 export type ActivityWhereInput = {
@@ -570,6 +588,19 @@ export type FormationsWithClassesQuery = (
   )> }
 );
 
+export type PublicStudentsQueryVariables = Exact<{
+  classId: Scalars['String'];
+}>;
+
+
+export type PublicStudentsQuery = (
+  { __typename?: 'Query' }
+  & { publicStudents: Array<(
+    { __typename?: 'PublicStudent' }
+    & Pick<PublicStudent, 'id' | 'fullName' | 'cef' | 'cin'>
+  )> }
+);
+
 export const ActivityFragmentDoc = gql`
     fragment Activity on Activity {
   id
@@ -771,3 +802,39 @@ export function useFormationsWithClassesLazyQuery(baseOptions?: Apollo.LazyQuery
 export type FormationsWithClassesQueryHookResult = ReturnType<typeof useFormationsWithClassesQuery>;
 export type FormationsWithClassesLazyQueryHookResult = ReturnType<typeof useFormationsWithClassesLazyQuery>;
 export type FormationsWithClassesQueryResult = Apollo.QueryResult<FormationsWithClassesQuery, FormationsWithClassesQueryVariables>;
+export const PublicStudentsDocument = gql`
+    query PublicStudents($classId: String!) {
+  publicStudents(where: {classId: $classId}) {
+    id
+    fullName
+    cef
+    cin
+  }
+}
+    `;
+
+/**
+ * __usePublicStudentsQuery__
+ *
+ * To run a query within a React component, call `usePublicStudentsQuery` and pass it any options that fit your needs.
+ * When your component renders, `usePublicStudentsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = usePublicStudentsQuery({
+ *   variables: {
+ *      classId: // value for 'classId'
+ *   },
+ * });
+ */
+export function usePublicStudentsQuery(baseOptions?: Apollo.QueryHookOptions<PublicStudentsQuery, PublicStudentsQueryVariables>) {
+        return Apollo.useQuery<PublicStudentsQuery, PublicStudentsQueryVariables>(PublicStudentsDocument, baseOptions);
+      }
+export function usePublicStudentsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<PublicStudentsQuery, PublicStudentsQueryVariables>) {
+          return Apollo.useLazyQuery<PublicStudentsQuery, PublicStudentsQueryVariables>(PublicStudentsDocument, baseOptions);
+        }
+export type PublicStudentsQueryHookResult = ReturnType<typeof usePublicStudentsQuery>;
+export type PublicStudentsLazyQueryHookResult = ReturnType<typeof usePublicStudentsLazyQuery>;
+export type PublicStudentsQueryResult = Apollo.QueryResult<PublicStudentsQuery, PublicStudentsQueryVariables>;

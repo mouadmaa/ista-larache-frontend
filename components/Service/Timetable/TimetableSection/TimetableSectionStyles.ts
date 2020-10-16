@@ -16,14 +16,10 @@ export const TimetableImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 3rem;
   min-height: 10rem;
+  margin-top: 2rem;
 
   img {
     width: 100%;
-  }
-
-  h3 {
-    font-size: 1.8rem;
   }
 `

@@ -1,13 +1,13 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { TimetableImageContainer, TimetableSectionContainer } from './TImetableStyles'
-import { scrollToElement } from '../../../utils/scrollToElement'
+import { TimetableImageContainer, TimetableSectionContainer } from './TimetableSectionStyles'
+import { scrollToElement } from '../../../../utils/scrollToElement'
 import HeadingSecondary from '@/components/UI/Heading/HeadingScondary/HeadingScondaryComponent'
 import HeadingTertiary from '@/components/UI/Heading/HeadingTertiary/HeadingTertiaryComponent'
 import { Class } from '@/generated/graphql'
-import SelectClass from '../Class/SelectClass/SelectClassComponent'
-import { SelectClassContainer } from '../Class/SelectClass/SelectClassStyles'
+import SelectClass from '../../Class/SelectClass/SelectClassComponent'
+import { SelectClassContainer } from '../../Class/SelectClass/SelectClassStyles'
 
 const TimetableSection: FC = () => {
   const [selectedclass, setSelectedClass] = useState<Class>()
@@ -35,7 +35,6 @@ const TimetableSection: FC = () => {
         <HeadingTertiary
           text="choisissez un filière pour obtenir vos l'emplois du temps:"
         />
-
         <SelectClass
           onSelect={handleSelect}
         />
@@ -52,7 +51,7 @@ const TimetableSection: FC = () => {
               <HeadingTertiary
                 text="Il n'a pas encore été ajouté"
               />
-          )}
+            )}
         </TimetableImageContainer>
       )}
     </TimetableSectionContainer>

@@ -74,7 +74,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
   justify-items: center;
   grid-column: 1.2rem;
   grid-gap: 2rem;
-  background-color: #f3feffdb;
+  background-color: ${(({ theme }) => theme.color.primaryWhite)};
   padding: 1rem 3rem;
   border-radius: 1rem;
   box-shadow: ${(({ theme }) => theme.shadow.white)};

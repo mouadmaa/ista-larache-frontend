@@ -4,7 +4,8 @@ import Head from 'next/head'
 
 import HeaderSecondary from '@/layout/HeaderSecondary/HeaderSecondaryComponent'
 import NoteSection from '@/components/Service/Note/NoteSection/NoteSectionComponent'
-import TimetableSection from '@/components/Service/Timetable/TimetableSectionComponent'
+import TimetableSection from '@/components/Service/Timetable/TimetableSection/TimetableSectionComponent'
+import RegisterSection from '@/components/Service/Register/RegisterSection/RegisterSectionComponent'
 import { initializeApollo } from 'apollo/apolloClient'
 import { FormationsWithClassesDocument } from '@/generated/graphql'
 
@@ -15,11 +16,12 @@ const Services: FC = () => {
         <title>Services | ISTA LARACHE</title>
       </Head>
       <HeaderSecondary
-        textMain="services"
-        textSub="ista larache vous offre un service de obtenir les notes et l'emploi du temps du stagiaire et l'inscription pour les stagiaires"
+        textMain="ista larache vous offre un service"
+        textSub="de obtenir les notes et l'emploi du temps du stagiaire et l'inscription ou vérifier acceptation"
       />
       <NoteSection />
       <TimetableSection />
+      <RegisterSection />
     </Fragment>
   )
 }
