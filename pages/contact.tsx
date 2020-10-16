@@ -1,5 +1,4 @@
 import { FC, Fragment } from 'react'
-import Head from 'next/head'
 
 import HeaderSecondary from '../layout/HeaderSecondary/HeaderSecondaryComponent'
 import ContatcSection from '@/components/Home/ContactSection/ContactSectionComponent'
@@ -7,10 +6,8 @@ import ContatcSection from '@/components/Home/ContactSection/ContactSectionCompo
 const Contact: FC = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Contact | ISTA LARACHE</title>
-      </Head>
       <HeaderSecondary
+        title="Contact"
         textMain="nous contacter"
         textSub="pour nous contacter, remplissez les champs ci-dessous"
       />

@@ -1,6 +1,5 @@
 import { FC, Fragment } from 'react'
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 
 import { initializeApollo } from '../apollo/apolloClient'
 import { FormationsDocument } from '../generated/graphql'
@@ -10,11 +9,9 @@ import FormationSection from '../components/Home/FormationSection/FormationSecti
 const Formations: FC = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Formations | ISTA LARACHE</title>
-      </Head>
       <HeaderSecondary
-        textMain="les formations assurées à l'établissement"
+        title="Formations"
+        textMain="les formations assurées à l' ista larache"
         textSub="pour plus d'informations sur ces formations cliquez sur un"
       />
       <FormationSection inPage />

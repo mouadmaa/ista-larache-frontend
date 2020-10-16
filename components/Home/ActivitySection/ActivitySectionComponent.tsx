@@ -6,21 +6,21 @@ import HeadingSecondary from '../../UI/Heading/HeadingScondary/HeadingScondaryCo
 import { ActivitiesQueryVariables, Sort, useActivitiesQuery } from '../../../generated/graphql'
 import ActivityCard from '../../Activity/ActivityCard/ActivityCardComponent'
 
-export const ActivitiesQueryVars: ActivitiesQueryVariables = {
-  take: 2,
-  skip: 0,
-  orderBy: {
-    date: Sort.Desc,
-  },
+interface ActivitySectionProps {
+  inPage?: boolean
 }
 
-const ActivitySection: FC = () => {
+const ActivitySection: FC<ActivitySectionProps> = props => {
+  const { inPage = false } = props
+
   const { data } = useActivitiesQuery({
-    variables: ActivitiesQueryVars,
+    variables: inPage ? ActivitiesPageQueryVars : ActivitiesQueryVars,
   })
 
   return (
-    <ActivitySectionContainer>
+    <ActivitySectionContainer
+      inPage={inPage}
+    >
       <HeadingSecondary
         text="les activités à l'ista larache"
       />
@@ -33,13 +33,31 @@ const ActivitySection: FC = () => {
         />
       ))}
 
-      <ButtonLink
-        href='/activities'
-        text='Afficher tous les activités'
-        passHref
-      />
+      {!inPage && (
+        <ButtonLink
+          href='/activities'
+          text='Afficher tous les activités'
+          passHref
+        />
+      )}
     </ActivitySectionContainer>
   )
 }
 
 export default ActivitySection
+
+export const ActivitiesPageQueryVars: ActivitiesQueryVariables = {
+  take: 6,
+  skip: 0,
+  orderBy: {
+    date: Sort.Desc,
+  },
+}
+
+export const ActivitiesQueryVars: ActivitiesQueryVariables = {
+  take: 2,
+  skip: 0,
+  orderBy: {
+    date: Sort.Desc,
+  },
+}

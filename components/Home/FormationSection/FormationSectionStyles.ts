@@ -46,7 +46,7 @@ export const FormationSectionContainer = styled.section`
 `
 
 const formationSectionContainerStyles = css`
-  padding: 10rem 5vw 14rem;
+  padding: 8rem 5vw 14rem;
 
   > div {
     margin: 2rem 0 8rem;

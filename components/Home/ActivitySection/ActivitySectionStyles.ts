@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface ActivitySectionContainerProps {
+  inPage: boolean
+}
+
+const getActivitySectionContainerStyles = (props: ActivitySectionContainerProps) => {
+  return props.inPage && activitySectionContainerStyles
+}
 
 export const ActivitySectionContainer = styled.section`
   display: flex;
@@ -25,5 +33,17 @@ export const ActivitySectionContainer = styled.section`
     @media screen and (max-width: 37.5em) {
       margin-bottom: 15rem;
     }
+  }
+
+  ${getActivitySectionContainerStyles}
+`
+
+const activitySectionContainerStyles = css`
+  background-color: #fff;
+  clip-path: none;
+  padding: 6rem 5vw;
+
+  > section {
+    background-color: #fff;
   }
 `

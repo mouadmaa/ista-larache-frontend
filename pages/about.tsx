@@ -1,5 +1,4 @@
 import { FC, Fragment } from 'react'
-import Head from 'next/head'
 
 import { AboutPageContent } from '@/components/Home/AboutSection/AboutSectionStyles'
 import AboutSection from '@/components/Home/AboutSection/AboutSectionComponent'
@@ -9,10 +8,8 @@ import HeaderSecondary from '../layout/HeaderSecondary/HeaderSecondaryComponent'
 const About: FC = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Propos | ISTA LARACHE</title>
-      </Head>
       <HeaderSecondary
+        title="Propos"
         textMain="à propos de ista larache"
         textSub="quelques informations sur les conditions d'accès à la formation, et comment s'inscrire dans l'établissement"
       />
