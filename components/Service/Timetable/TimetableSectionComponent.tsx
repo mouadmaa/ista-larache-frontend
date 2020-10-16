@@ -1,14 +1,16 @@
 import { FC, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { TimetableSectionContainer } from './TImetableStyles'
+import { TimetableImageContainer, TimetableSectionContainer } from './TImetableStyles'
 import { scrollToElement } from '../../../utils/scrollToElement'
 import HeadingSecondary from '@/components/UI/Heading/HeadingScondary/HeadingScondaryComponent'
 import HeadingTertiary from '@/components/UI/Heading/HeadingTertiary/HeadingTertiaryComponent'
-import SelectClass from '../Class/SelectClass/SelectClass'
+import { Class } from '@/generated/graphql'
+import SelectClass from '../Class/SelectClass/SelectClassComponent'
+import { SelectClassContainer } from '../Class/SelectClass/SelectClassStyles'
 
 const TimetableSection: FC = () => {
-  const [timetableState, setTimetableState] = useState('')
+  const [selectedclass, setSelectedClass] = useState<Class>()
 
   const router = useRouter()
   const timetableRef = useRef()
@@ -19,10 +21,7 @@ const TimetableSection: FC = () => {
     }
   }, [router])
 
-  const handleSelect = (formationId?: string, classId?: string) => {
-    console.log('formationId', formationId)
-    console.log('classId', classId)
-  }
+  const handleSelect = (selectedclass?: Class) => setSelectedClass(selectedclass)
 
   return (
     <TimetableSectionContainer
@@ -32,7 +31,7 @@ const TimetableSection: FC = () => {
         text="les emplois du temps"
       />
 
-      <div>
+      <SelectClassContainer>
         <HeadingTertiary
           text="choisissez un filière pour obtenir vos l'emplois du temps:"
         />
@@ -40,35 +39,22 @@ const TimetableSection: FC = () => {
         <SelectClass
           onSelect={handleSelect}
         />
-      </div>
+      </SelectClassContainer>
 
-      {/* {trainingState && (
-        <div style={{ display: 'flex', marginTop: '3rem' }}>
-          <div style={{ margin: 'auto' }}>
-            {loadingTimetable ? (
-              <CircularProgress disableShrink />
-            ) : (
-                <Fragment>
-                  {timetableState ? (
-                    <Fragment>
-                      <img
-                        style={{ height: '100%', width: '100%' }}
-                        src={`${process.env.REACT_APP_ASSET_URL}${timetableState.image}`}
-                        alt="Emploi des tepms"
-                      />
-                    </Fragment>
-                  ) : (
-                      <h3
-                        style={{ fontSize: '2rem' }}
-                        className='heading-tretiary center-text'>
-                        Il n'a pas encore été ajouté
-                      </h3>
-                    )}
-                </Fragment>
-              )}
-          </div>
-        </div>
-      )} */}
+      {selectedclass && (
+        <TimetableImageContainer>
+          {selectedclass.timetable ? (
+            <img
+              src={selectedclass.timetable}
+              alt="Emploi des tepms"
+            />
+          ) : (
+              <HeadingTertiary
+                text="Il n'a pas encore été ajouté"
+              />
+          )}
+        </TimetableImageContainer>
+      )}
     </TimetableSectionContainer>
   )
 }
