@@ -31,31 +31,41 @@ const Navigation: FC = () => {
       <NavigationList active={showNavigationSlide}>
         <NavigationItem active={pathname === '/services'}>
           <Link href="/services" passHref>
-            <NavigationLink>Services</NavigationLink>
+            <NavigationLink onClick={() => setShowNavigationSlide(false)}>
+              Services
+            </NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={pathname === '/formations'}>
           <Link href="/formations" passHref>
-            <NavigationLink>Formations</NavigationLink>
+            <NavigationLink onClick={() => setShowNavigationSlide(false)}>
+              Formations
+            </NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={pathname === '/activities'}>
           <Link href="/activities" passHref>
-            <NavigationLink>Activités</NavigationLink>
+            <NavigationLink onClick={() => setShowNavigationSlide(false)}>
+              Activités
+            </NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={pathname === '/about'}>
           <Link href="/about" passHref>
-            <NavigationLink>Propos</NavigationLink>
+            <NavigationLink onClick={() => setShowNavigationSlide(false)}>
+              Propos
+            </NavigationLink>
           </Link>
         </NavigationItem>
 
         <NavigationItem active={pathname === '/contact'}>
           <Link href="/contact" passHref>
-            <NavigationLink>Contact</NavigationLink>
+            <NavigationLink onClick={() => setShowNavigationSlide(false)}>
+              Contact
+            </NavigationLink>
           </Link>
         </NavigationItem>
       </NavigationList>

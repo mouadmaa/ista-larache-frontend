@@ -28,6 +28,7 @@ const RegisterSection: FC = () => {
   return (
     <RegisterSectionContainer
       ref={registerRef}
+      tableVisible={Boolean(selectedclass)}
     >
       <HeadingSecondary
         text="Inscreption ou vérifier acceptation"

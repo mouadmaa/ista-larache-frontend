@@ -1,4 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface RegisterSectionContainerProps {
+  tableVisible: boolean
+}
+
+const getRegisterSectionContainerStyles = (props: RegisterSectionContainerProps) => {
+  return props.tableVisible && registerSectionContainerStyles
+}
 
 export const RegisterSectionContainer = styled.section`
   display: flex;
@@ -21,11 +29,15 @@ export const RegisterSectionContainer = styled.section`
     }
   }
 
-  > div :last-of-type {
-    width: 100%;
-  }
-
   @media screen and (max-width: 37.5em) {
     margin: 15rem 2vw;
+  }
+
+  ${getRegisterSectionContainerStyles}
+`
+
+const registerSectionContainerStyles = css`
+  > div :last-of-type {
+    width: 100%;
   }
 `
