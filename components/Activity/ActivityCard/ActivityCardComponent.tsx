@@ -10,14 +10,14 @@ import { Activity } from '../../../generated/graphql'
 interface ActivityCardProps {
   activity: Activity
   maxLength?: number
-  reverse: boolean
+  reverse?: boolean
 }
 
 const ActivityCard: FC<ActivityCardProps> = props => {
-  const { activity, reverse, maxLength = 500 } = props
+  const { activity, reverse = false, maxLength = 500 } = props
 
   const handleClick = () => {
-    router.push({ href: `/activities/${activity.slug}` })
+    router.push('/activities/[slug]', `/activities/${activity.slug}`)
   }
 
   return (

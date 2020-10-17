@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next'
 
 import HeaderSecondary from '@/layout/HeaderSecondary/HeaderSecondaryComponent'
 import ActivitySection, { ActivitiesPageQueryVars } from '@/components/Home/ActivitySection/ActivitySectionComponent'
-import { initializeApollo } from '../apollo/apolloClient'
+import { initializeApollo } from '../../apollo/apolloClient'
 import { ActivitiesDocument } from '@/generated/graphql'
 
 const Activities: FC = () => {

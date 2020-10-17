@@ -561,6 +561,19 @@ export type ActivitiesQuery = (
   ) }
 );
 
+export type ActivityQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+export type ActivityQuery = (
+  { __typename?: 'Query' }
+  & { activity?: Maybe<(
+    { __typename?: 'Activity' }
+    & ActivityFragment
+  )> }
+);
+
 export type FormationsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -733,6 +746,39 @@ export function useActivitiesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions
 export type ActivitiesQueryHookResult = ReturnType<typeof useActivitiesQuery>;
 export type ActivitiesLazyQueryHookResult = ReturnType<typeof useActivitiesLazyQuery>;
 export type ActivitiesQueryResult = Apollo.QueryResult<ActivitiesQuery, ActivitiesQueryVariables>;
+export const ActivityDocument = gql`
+    query Activity($slug: String!) {
+  activity(where: {slug: $slug}) {
+    ...Activity
+  }
+}
+    ${ActivityFragmentDoc}`;
+
+/**
+ * __useActivityQuery__
+ *
+ * To run a query within a React component, call `useActivityQuery` and pass it any options that fit your needs.
+ * When your component renders, `useActivityQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useActivityQuery({
+ *   variables: {
+ *      slug: // value for 'slug'
+ *   },
+ * });
+ */
+export function useActivityQuery(baseOptions?: Apollo.QueryHookOptions<ActivityQuery, ActivityQueryVariables>) {
+        return Apollo.useQuery<ActivityQuery, ActivityQueryVariables>(ActivityDocument, baseOptions);
+      }
+export function useActivityLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<ActivityQuery, ActivityQueryVariables>) {
+          return Apollo.useLazyQuery<ActivityQuery, ActivityQueryVariables>(ActivityDocument, baseOptions);
+        }
+export type ActivityQueryHookResult = ReturnType<typeof useActivityQuery>;
+export type ActivityLazyQueryHookResult = ReturnType<typeof useActivityLazyQuery>;
+export type ActivityQueryResult = Apollo.QueryResult<ActivityQuery, ActivityQueryVariables>;
 export const FormationsDocument = gql`
     query Formations {
   formations {

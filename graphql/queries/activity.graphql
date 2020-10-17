@@ -1,0 +1,11 @@
+query Activity(
+  $slug: String!
+) {
+  activity(
+    where: {
+      slug: $slug
+    }
+  ) {
+    ...Activity
+  }
+}

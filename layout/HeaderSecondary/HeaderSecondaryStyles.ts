@@ -7,7 +7,7 @@ export const HeaderSecondaryContainer = styled.header`
   width: 100%;
   height: 43vh;
   padding-top: 12vh;
-  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(images/ista-4.png);
+  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(/images/ista-4.png);
   background-size: cover;
   background-position: center top;
 

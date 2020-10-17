@@ -12,7 +12,7 @@ const Footer: FC = () => {
     <FooterContainer>
       <FooterAboutContainer>
         <div>
-          <img src='images/logo.png' alt="logo ista" />
+          <img src='/images/logo.png' alt="logo ista" />
           <Link href='/' passHref><a>ISTA LARACHE</a></Link>
         </div>
 
@@ -24,22 +24,22 @@ const Footer: FC = () => {
         <FooterSocialList>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='icons/facebook.png' alt="icon facebook" /></a>
+              <a><img className="footer__social-img" src='/icons/facebook.png' alt="icon facebook" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='icons/twitter.png' alt="icon twitter" /></a>
+              <a><img className="footer__social-img" src='/icons/twitter.png' alt="icon twitter" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='icons/google.png' alt="icon google plus" /></a>
+              <a><img className="footer__social-img" src='/icons/google.png' alt="icon google plus" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='icons/instagram.png' alt="icon instagram" /></a>
+              <a><img className="footer__social-img" src='/icons/instagram.png' alt="icon instagram" /></a>
             </Link>
           </li>
         </FooterSocialList>
@@ -86,17 +86,17 @@ const Footer: FC = () => {
 
         <div>
           <FooterAdressContent>
-            <img src='icons/location.ico' alt="location icon" />
+            <img src='/icons/location.ico' alt="location icon" />
             <p>Rte de Rabat. Avenue Omar Ibn Abdelaziz 92000 Larache</p>
           </FooterAdressContent>
 
           <FooterAdressContent>
-            <img src='icons/email.ico' alt="email icon" />
+            <img src='/icons/email.ico' alt="email icon" />
             <p>istalarache2020@gmail.com</p>
           </FooterAdressContent>
 
           <FooterAdressContent>
-            <img src='icons/phone.ico' alt="phone icon" />
+            <img src='/icons/phone.ico' alt="phone icon" />
             <p>+212539912646</p>
           </FooterAdressContent>
         </div>

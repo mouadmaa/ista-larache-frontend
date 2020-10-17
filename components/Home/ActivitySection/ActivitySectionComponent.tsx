@@ -15,7 +15,7 @@ interface ActivitySectionProps {
 const ActivitySection: FC<ActivitySectionProps> = props => {
   const { inPage = false } = props
 
-  const { data, fetchMore, networkStatus } = useActivitiesQuery({
+  const { data: { activities, _activitiesMeta }, fetchMore, networkStatus } = useActivitiesQuery({
     variables: inPage ? ActivitiesPageQueryVars : ActivitiesQueryVars,
     notifyOnNetworkStatusChange: true,
   })
@@ -28,7 +28,6 @@ const ActivitySection: FC<ActivitySectionProps> = props => {
     })
   }
 
-  const { activities, _activitiesMeta } = data
   const loadingMorePosts = networkStatus === NetworkStatus.fetchMore
   const areMorePosts = activities.length < _activitiesMeta.count
 
@@ -70,7 +69,7 @@ const ActivitySection: FC<ActivitySectionProps> = props => {
 export default ActivitySection
 
 export const ActivitiesPageQueryVars: ActivitiesQueryVariables = {
-  take: 1,
+  take: 5,
   skip: 0,
   orderBy: {
     date: Sort.Desc,

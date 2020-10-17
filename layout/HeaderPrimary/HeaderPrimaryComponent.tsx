@@ -9,9 +9,7 @@ import HeadingTertiary from '../../components/UI/Heading/HeadingTertiary/Heading
 const HeaderPrimary = () => {
   const { push } = useRouter()
 
-  const handleClick = hash => {
-    push(`/services#${hash}`)
-  }
+  const handleClick = hash => push(`/services#${hash}`)
 
   return (
     <HeaderPrimaryContainer>
