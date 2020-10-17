@@ -1,5 +1,6 @@
 import { useMemo } from 'react'
 import { ApolloClient, InMemoryCache } from '@apollo/client'
+import { concatPagination } from '@apollo/client/utilities'
 
 let apolloClient
 
@@ -7,7 +8,15 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     uri: process.env.NEXT_PUBLIC_BACKEND_URL,
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            activities: concatPagination(),
+          },
+        },
+      },
+    }),
   })
 }
 

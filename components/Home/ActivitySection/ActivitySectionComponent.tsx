@@ -1,10 +1,12 @@
 import { FC } from 'react'
+import { NetworkStatus } from '@apollo/client'
 
 import { ActivitySectionContainer } from './ActivitySectionStyles'
 import ButtonLink from '../../UI/Button/ButtonLink/ButtonLinkComponent'
 import HeadingSecondary from '../../UI/Heading/HeadingScondary/HeadingScondaryComponent'
-import { ActivitiesQueryVariables, Sort, useActivitiesQuery } from '../../../generated/graphql'
 import ActivityCard from '../../Activity/ActivityCard/ActivityCardComponent'
+import Button from '@/components/UI/Button/Button/ButtonComponent'
+import { ActivitiesQueryVariables, Sort, useActivitiesQuery } from '@/generated/graphql'
 
 interface ActivitySectionProps {
   inPage?: boolean
@@ -13,9 +15,22 @@ interface ActivitySectionProps {
 const ActivitySection: FC<ActivitySectionProps> = props => {
   const { inPage = false } = props
 
-  const { data } = useActivitiesQuery({
+  const { data, fetchMore, networkStatus } = useActivitiesQuery({
     variables: inPage ? ActivitiesPageQueryVars : ActivitiesQueryVars,
+    notifyOnNetworkStatusChange: true,
   })
+
+  const loadMorePosts = () => {
+    fetchMore({
+      variables: {
+        skip: activities.length
+      },
+    })
+  }
+
+  const { activities, _activitiesMeta } = data
+  const loadingMorePosts = networkStatus === NetworkStatus.fetchMore
+  const areMorePosts = activities.length < _activitiesMeta.count
 
   return (
     <ActivitySectionContainer
@@ -25,7 +40,7 @@ const ActivitySection: FC<ActivitySectionProps> = props => {
         text="les activités à l'ista larache"
       />
 
-      {data.activities.activities.map((activity, index) => (
+      {activities.map((activity, index) => (
         <ActivityCard
           key={activity.id}
           activity={activity}
@@ -40,6 +55,14 @@ const ActivitySection: FC<ActivitySectionProps> = props => {
           passHref
         />
       )}
+
+      {inPage && areMorePosts && (
+        <Button
+          text={loadingMorePosts ? 'Chargement...' : 'Montre plus'}
+          onClick={loadMorePosts}
+          loading={loadingMorePosts}
+        />
+      )}
     </ActivitySectionContainer>
   )
 }
@@ -47,7 +70,7 @@ const ActivitySection: FC<ActivitySectionProps> = props => {
 export default ActivitySection
 
 export const ActivitiesPageQueryVars: ActivitiesQueryVariables = {
-  take: 6,
+  take: 1,
   skip: 0,
   orderBy: {
     date: Sort.Desc,

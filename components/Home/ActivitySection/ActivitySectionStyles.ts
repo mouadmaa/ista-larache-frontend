@@ -43,7 +43,16 @@ const activitySectionContainerStyles = css`
   clip-path: none;
   padding: 6rem 5vw;
 
+  h2 {
+    margin-bottom: 1rem;
+  }
+
   > section {
     background-color: #fff;
+  }
+
+  button {
+    margin-top: 3rem;
+    padding: 1rem 4rem;
   }
 `

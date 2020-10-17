@@ -26,7 +26,8 @@ export type Query = {
   publicStudents: Array<PublicStudent>;
   notes: Array<Note>;
   activity?: Maybe<Activity>;
-  activities?: Maybe<Activities>;
+  activities: Array<Activity>;
+  _activitiesMeta: ActivitiesMeta;
 };
 
 
@@ -204,9 +205,8 @@ export enum Sort {
   Desc = 'desc'
 }
 
-export type Activities = {
-  __typename?: 'Activities';
-  activities: Array<Activity>;
+export type ActivitiesMeta = {
+  __typename?: 'ActivitiesMeta';
   count: Scalars['Int'];
 };
 
@@ -552,14 +552,13 @@ export type ActivitiesQueryVariables = Exact<{
 
 export type ActivitiesQuery = (
   { __typename?: 'Query' }
-  & { activities?: Maybe<(
-    { __typename?: 'Activities' }
-    & Pick<Activities, 'count'>
-    & { activities: Array<(
-      { __typename?: 'Activity' }
-      & ActivityFragment
-    )> }
-  )> }
+  & { activities: Array<(
+    { __typename?: 'Activity' }
+    & ActivityFragment
+  )>, _activitiesMeta: (
+    { __typename?: 'ActivitiesMeta' }
+    & Pick<ActivitiesMeta, 'count'>
+  ) }
 );
 
 export type FormationsQueryVariables = Exact<{ [key: string]: never; }>;
@@ -697,12 +696,12 @@ export type StudentNotesMutationHookResult = ReturnType<typeof useStudentNotesMu
 export type StudentNotesMutationResult = Apollo.MutationResult<StudentNotesMutation>;
 export type StudentNotesMutationOptions = Apollo.BaseMutationOptions<StudentNotesMutation, StudentNotesMutationVariables>;
 export const ActivitiesDocument = gql`
-    query Activities($take: Int, $skip: Int, $orderBy: ActivityOrderByInput) {
+    query activities($take: Int, $skip: Int, $orderBy: ActivityOrderByInput) {
   activities(take: $take, skip: $skip, orderBy: $orderBy) {
+    ...Activity
+  }
+  _activitiesMeta {
     count
-    activities {
-      ...Activity
-    }
   }
 }
     ${ActivityFragmentDoc}`;
