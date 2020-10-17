@@ -22,7 +22,7 @@ const HeaderPrimary = () => {
 
       <HeaderPrimarySectionService>
         <HeaderPrimaryServerBoxContainer onClick={() => handleClick('notes')}>
-          <img src='images/notes.png' alt="notes" />
+          <img src='/images/notes.png' alt="notes" />
           <div>
             <HeadingTertiary text="Les Notes d'éxamens" />
             <p>Si vous avez le CEF et le Mot de Passe, vous pouvez voir vos notes d'examen et la note finale de l'année.</p>
@@ -30,7 +30,7 @@ const HeaderPrimary = () => {
         </HeaderPrimaryServerBoxContainer>
 
         <HeaderPrimaryServerBoxContainer onClick={() => handleClick('timetable')}>
-          <img src='images/timetable.png' alt="timetable" />
+          <img src='/images/timetable.png' alt="timetable" />
           <div>
             <HeadingTertiary text='Les Emplois Du Temps' />
             <p>Consultez et téléchargez l'emploi du temps pour vos filière ou autres filières.</p>
@@ -38,7 +38,7 @@ const HeaderPrimary = () => {
         </HeaderPrimaryServerBoxContainer>
 
         <HeaderPrimaryServerBoxContainer onClick={() => handleClick('register')}>
-          <img src='images/register.png' alt="register" />
+          <img src='/images/register.png' alt="register" />
           <div>
             <HeadingTertiary text='Inscription et vérifiez votre acceptation' />
             <p>Vérifiez votre acceptation et les étapes pour vous inscrire à ISTA LARACHE.</p>

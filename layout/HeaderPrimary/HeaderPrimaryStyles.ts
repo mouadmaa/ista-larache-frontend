@@ -7,7 +7,7 @@ export const HeaderPrimaryContainer = styled.header`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(images/ista-3.png);
+  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(/images/ista-3.png);
   background-size: cover;
   background-position: center bottom;
   clip-path: polygon(0 0, 100% 0%, 100% 90%, 0% 100%);

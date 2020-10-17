@@ -217,7 +217,7 @@ export const FooterAdressContent = styled.div`
 
   p {
     color: ${({ theme }) => theme.color.primaryWhite};
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
     text-transform: uppercase;
   }

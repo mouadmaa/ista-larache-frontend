@@ -24,22 +24,22 @@ const Footer: FC = () => {
         <FooterSocialList>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='/icons/facebook.png' alt="icon facebook" /></a>
+              <a><img src='/icons/facebook.png' alt="icon facebook" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='/icons/twitter.png' alt="icon twitter" /></a>
+              <a><img src='/icons/twitter.png' alt="icon twitter" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='/icons/google.png' alt="icon google plus" /></a>
+              <a><img src='/icons/google.png' alt="icon google plus" /></a>
             </Link>
           </li>
           <li>
             <Link href='/' passHref>
-              <a><img className="footer__social-img" src='/icons/instagram.png' alt="icon instagram" /></a>
+              <a><img src='/icons/instagram.png' alt="icon instagram" /></a>
             </Link>
           </li>
         </FooterSocialList>
@@ -48,7 +48,7 @@ const Footer: FC = () => {
       <FooterNavigationContainer>
         <div><HeadingTertiary text='Menu' /></div>
 
-        <ul className="footer__list">
+        <ul>
           <li>
             <Link href="/services" passHref>
               <a>Services</a>

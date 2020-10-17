@@ -44,7 +44,7 @@ const activitySectionContainerStyles = css`
   padding: 6rem 5vw;
 
   h2 {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
   }
 
   > section {

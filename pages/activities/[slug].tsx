@@ -1,11 +1,12 @@
 import { FC, Fragment } from 'react'
 import { useRouter } from 'next/router'
 import { GetStaticPaths, GetStaticProps } from 'next'
+import moment from 'moment'
 
 import { initializeApollo } from '../../apollo/apolloClient'
-import { ActivitiesDocument, ActivityDocument, useActivityQuery } from '@/generated/graphql'
+import { ActivitiesDocument, ActivityDocument, useActivityQuery, ActivitiesQueryResult } from '@/generated/graphql'
 import HeaderSecondary from '@/layout/HeaderSecondary/HeaderSecondaryComponent'
-import ActivityCard from '@/components/Activity/ActivityCard/ActivityCardComponent'
+import ActivityContent from '@/components/Activity/ActivityContent/ActivityContentComponent'
 
 const Activity: FC = () => {
   const router = useRouter()
@@ -16,11 +17,13 @@ const Activity: FC = () => {
   return (
     <Fragment>
       <HeaderSecondary
-        title="Activités"
-        textMain="Les activités à l'ista larache"
-        textSub="Découvrez les activités à venir et passés à ista larache"
+        title={activity.title}
+        textMain={activity.title}
+        textSub={`Créateur: ${activity.creator.toUpperCase()} - Date: ${moment(+ activity.date).format('YYYY/MM/DD')}`}
+        image={activity.image}
+        inActivity
       />
-      <ActivityCard
+      <ActivityContent
         activity={activity}
       />
     </Fragment>
@@ -34,7 +37,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const { data: { activities } } = await apolloClient.query({
     query: ActivitiesDocument,
-  })
+  }) as ActivitiesQueryResult
 
   return {
     fallback: true,

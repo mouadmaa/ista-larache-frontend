@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+interface HeaderSecondaryContainerProps {
+  inActivity: boolean
+  image?: string
+}
+
+const geteaderSecondaryContainerStyles = (props: HeaderSecondaryContainerProps) => {
+  return props.inActivity && headerSecondaryContainerStyles(props.image)
+}
 
 export const HeaderSecondaryContainer = styled.header`
   display: flex;
@@ -61,4 +70,12 @@ export const HeaderSecondaryContainer = styled.header`
       }
     }
   }
+
+  ${geteaderSecondaryContainerStyles}
+`
+
+const headerSecondaryContainerStyles = (image?: string) => css`
+  background-image: linear-gradient(to left, rgba(38, 118, 171, 0.95), rgba(44, 138, 199, 0.85)), url(${image});
+  background-position: center;
+  background-repeat: no-repeat;
 `
