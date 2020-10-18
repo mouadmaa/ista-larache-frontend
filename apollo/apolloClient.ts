@@ -8,6 +8,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     uri: process.env.NEXT_PUBLIC_BACKEND_URL,
+    connectToDevTools: process.env.NODE_ENV === 'development',
     cache: new InMemoryCache({
       typePolicies: {
         Query: {
