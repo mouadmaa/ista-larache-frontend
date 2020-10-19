@@ -1,5 +1,5 @@
 import { FC, Fragment } from 'react'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 
 import HeaderSecondary from '@/layout/HeaderSecondary/HeaderSecondaryComponent'
 import NoteSection from '@/components/Service/Note/NoteSection/NoteSectionComponent'
@@ -25,7 +25,7 @@ const Services: FC = () => {
 
 export default Services
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const apolloClient = initializeApollo()
 
   await apolloClient.query({
@@ -33,6 +33,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   })
 
   return {
+    revalidate: 3000,
     props: {
       initialApolloState: apolloClient.cache.extract(),
     },

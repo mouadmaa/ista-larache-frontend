@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import ButtonLink from '../../UI/Button/ButtonLink/ButtonLinkComponent'
+import { ButtonLinkContainer } from '@/components/UI/Button/ButtonLink/ButtonLinkStyles'
 import { Formation } from '../../../generated/graphql'
 
 interface FormationCardProps {
@@ -28,11 +28,13 @@ const FormationCard: FC<FormationCardProps> = props => {
 
       <div className="formation-card__content">
         {formations.map(formation => (
-          <ButtonLink
+          <ButtonLinkContainer
             key={formation.id}
             href={formation.descUrl}
-            text={formation.name}
-          />
+            target='_blanck'
+          >
+            {formation.name}
+          </ButtonLinkContainer>
         ))}
       </div>
 

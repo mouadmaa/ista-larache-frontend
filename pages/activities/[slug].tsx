@@ -12,7 +12,8 @@ const Activity: FC = () => {
   const router = useRouter()
   const slug = router.query.slug as string
 
-  const { data: { activity } } = useActivityQuery({ variables: { slug } })
+  const { data } = useActivityQuery({ variables: { slug } })
+  const { activity } = data
 
   return (
     <Fragment>
@@ -40,7 +41,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }) as ActivitiesQueryResult
 
   return {
-    fallback: true,
+    fallback: false,
     paths: activities.map(activity => ({
       params: { slug: activity.slug },
     })),
