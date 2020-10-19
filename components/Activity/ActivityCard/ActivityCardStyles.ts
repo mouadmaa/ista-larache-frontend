@@ -138,7 +138,7 @@ export const ActivityCardContent = styled.div`
 
     span {
       display: inline-block;
-      font-size: 1.2rem;
+      font-size: 1.2rem !important;
       font-weight: 500;
       margin: 0.2rem 0;
     }
