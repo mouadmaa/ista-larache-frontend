@@ -6,10 +6,7 @@ let state
 let activeRequests = 0
 const delay = 250
 
-NProgress.configure({ minimum: 0.4 })
-NProgress.configure({ trickleSpeed: 200 })
 NProgress.configure({ showSpinner: false })
-NProgress.configure({ easing: 'ease', speed: 500 })
 
 const load = () => {
   if (state === 'loading') return
