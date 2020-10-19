@@ -138,7 +138,7 @@ export const ActivityCardContent = styled.div`
 
     span {
       display: inline-block;
-      font-size: 1.2rem !important;
+      font-size: 1.2rem;
       font-weight: 500;
       margin: 0.2rem 0;
     }
@@ -158,7 +158,10 @@ export const ActivityCardContent = styled.div`
   }
 
   div :last-of-type {
-    font-size: 1.2rem;
     margin-bottom: 0.6rem !important;
+
+    p {
+      font-size: 1.2rem !important;
+    }
   }
 `

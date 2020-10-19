@@ -14,7 +14,7 @@ interface ActivityCardProps {
 }
 
 const ActivityCard: FC<ActivityCardProps> = props => {
-  const { activity, reverse = false, maxLength = 300 } = props
+  const { activity, reverse = false, maxLength = 200 } = props
 
   const handleClick = () => {
     router.push('/activities/[slug]', `/activities/${activity.slug}`)
