@@ -13,6 +13,8 @@ const Activity: FC = () => {
   const slug = router.query.slug as string
 
   const { data } = useActivityQuery({ variables: { slug } })
+
+  if (!data?.activity) return
   const { activity } = data
 
   return (

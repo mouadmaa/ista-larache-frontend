@@ -48,6 +48,7 @@ const RegisterTable: FC<registerTableProps> = props => {
       loading={loading}
       pagination={{ pageSize: 8 }}
       scroll={{ x: 600 }}
+      style={{ marginTop: '2rem' }}
       size='middle'
     />
   )
