@@ -20,6 +20,13 @@ const ActivityCard: FC<ActivityCardProps> = props => {
     router.push('/activities/[slug]', `/activities/${activity.slug}`)
   }
 
+
+  let imageUrl = ''
+  activity.image.split('/').forEach((item, index) => {
+    if (index === 6) imageUrl += `/c_scale,q_50,w_300/`
+    imageUrl += `${index !== 6 && index !== 0 ? '/' : ''}${item}`
+  })
+
   return (
     <ActivityCardContainer
       reverse={reverse}
@@ -27,7 +34,7 @@ const ActivityCard: FC<ActivityCardProps> = props => {
     >
       <ActivityCardImageContainer>
         <img
-          src={activity.image}
+          src={imageUrl}
           alt={activity.title}
         />
       </ActivityCardImageContainer>

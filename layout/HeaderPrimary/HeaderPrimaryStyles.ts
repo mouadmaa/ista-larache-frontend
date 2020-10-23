@@ -102,7 +102,7 @@ export const HeaderPrimaryServerBoxContainer = styled.div`
       height: 7rem;
     }
 
-    @media screen and (max-width: 20em) {
+    @media screen and (max-width: 25em) {
       display: none;
     }
   }

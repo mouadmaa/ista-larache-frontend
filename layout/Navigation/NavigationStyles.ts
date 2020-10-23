@@ -10,7 +10,7 @@ const getNavigationContainerStyles = (navbarContainerProps: NavigationContainerP
 
 export const NavigationContainer = styled.nav`
   width: 100%;
-  height: 10vh;
+  height: 12vh;
   background: transparent;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -24,13 +24,13 @@ export const NavigationContainer = styled.nav`
 `
 
 const showNavigationBackground = css`
-  width: 100%;
-  height: 6vh;
-  background-color: rgba(41, 128, 185, 0.95);
+  width: 100% !important;
+  height: 8vh !important;
+  background-color: rgba(41, 128, 185, 0.95) !important;
   box-shadow: ${(({ theme }) => theme.shadow.white)};
 
   ul {
-    top: 6vh;
+    top: 8vh !important;
   }
 `
 
@@ -59,8 +59,8 @@ interface NavigationListProps {
   active: boolean
 }
 
-const getNavigationListStyles = (navbatListProps: NavigationListProps) => {
-  return navbatListProps.active && navbarListActive
+const getNavigationListStyles = (navbarListProps: NavigationListProps) => {
+  return navbarListProps.active && navbarListActive
 }
 
 export const NavigationList = styled.ul`
@@ -68,18 +68,18 @@ export const NavigationList = styled.ul`
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  top: 10vh;
+  top: 10vh !important;
   margin-bottom: 0;
 
   @media screen and (max-width: 50em) {
     width: 75%;
-    height: 94vh;
+    height: 92vh;
     background-color: rgba(41, 128, 185, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 10vh;
+    top: 8vh;
     right: 0;
     flex-direction: column;
     justify-content: space-around;

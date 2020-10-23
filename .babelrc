@@ -14,7 +14,8 @@
       {
         "libraryName": "antd",
         "libraryDirectory": "lib",
-        "style": "index.css"
+        "style": "index.css",
+        "ssr": true
       }
     ]
   ]
