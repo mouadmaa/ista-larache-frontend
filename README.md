@@ -4,4 +4,4 @@ Developed a comprehensive web application for my school to streamline student an
 
 Technologies: Next.js, Apollo, Graphql
 
-[Dasboard](https://github.com/mouadmaa/ista-larache-admin) - [Backend](https://github.com/mouadmaa/ista-larache-backend)
+[Backend](https://github.com/mouadmaa/ista-larache-backend) - [Dasboard](https://github.com/mouadmaa/ista-larache-admin)
